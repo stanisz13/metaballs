@@ -3,6 +3,8 @@
 in vec2 posPass;
 out vec4 fragColor;
 
+uniform float aRatio;
+
 const int MAX_BALLS_NUM = 2;
 
 uniform float ballsPosX[MAX_BALLS_NUM];
@@ -21,24 +23,23 @@ void main()
     vec3 color = vec3(0);
 
     vec2 pos = posPass;
-    pos.x *= 1920.0f / 1080.0f;
+    pos.x *= aRatio;
     
-    float distSum = 0.0f;
-    float radSum = 0.0f;
+    float sum = 0.0f;
     for (int i = 0; i < MAX_BALLS_NUM; ++i)
     {
         float curX = ballsPosX[i] - pos.x;
         float curY = ballsPosY[i] - pos.y;
         float dist = curX * curX + curY * curY;
         dist = sqrt(dist);
-        distSum += dist;
-
-        radSum += radii[i];
+        sum += radii[i] / dist;
     }
-  
-    if (!equalsZero(distSum) && !equalsZero(radSum))
+
+    sum = sqrt(sum);
+    
+    if (!equalsZero(sum))
     {
-        color.r = mix(0.0f, 1.0f, radSum/distSum);
+        color = vec3(sum);
     }
     
     fragColor = vec4(color, 1.0f);

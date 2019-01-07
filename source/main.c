@@ -9,6 +9,28 @@ float ballsPosX[MAX_BALLS_NUM];
 float ballsPosY[MAX_BALLS_NUM];
 float radii[MAX_BALLS_NUM];
 
+float velocityX[MAX_BALLS_NUM];
+float velocityY[MAX_BALLS_NUM];
+
+void updatePositions(const float aRatio, const float dt)
+{
+    for (unsigned i = 0; i < MAX_BALLS_NUM; ++i)
+    {
+        ballsPosX[i] += velocityX[i] * dt;
+        ballsPosY[i] += velocityY[i] * dt;
+
+        if (ballsPosX[i] > aRatio || ballsPosX[i] < -aRatio)
+        {
+            velocityX[i] *= -1.0f;
+        }
+
+        if (ballsPosY[i] > 1.0f || ballsPosY[i] < -1.0f)
+        {
+            velocityY[i] *= -1.0f;
+        }
+    }
+}
+
 void drawBalls()
 {
     newLine();
@@ -51,17 +73,26 @@ int main(int argc, char* argv[])
     unsigned metaProgram = createShaderProgram("shaders/meta.vs", "shaders/meta.fs");
     glUseProgram_FA(metaProgram);
 
-    ballsPosX[0] = 0.5f;
+    ballsPosX[0] = 0.2f;
     ballsPosY[1] = 0.3f;
-    radii[0] = 0.2f;
-    radii[1] = 0.5f;
+    radii[0] = 0.1f;
+    radii[1] = 0.1f;
+
+    velocityX[0] = 0.001f;
+    velocityY[0] = -0.002f;
+    velocityX[1] = -0.002f;
+    velocityY[1] = 0.004f;
+    
+    float aRatio = contextData.windowWidth / contextData.windowHeight;
+    
+
     
     int ballsPosXLoc = glGetUniformLocation_FA(metaProgram, "ballsPosX");
     int ballsPosYLoc = glGetUniformLocation_FA(metaProgram, "ballsPosY");
+    int aRatioLoc = glGetUniformLocation_FA(metaProgram, "aRatio");
     int radiiLoc = glGetUniformLocation_FA(metaProgram, "radii");
-    glUniform1fv_FA(ballsPosXLoc, MAX_BALLS_NUM, ballsPosX);
-    glUniform1fv_FA(ballsPosYLoc, MAX_BALLS_NUM, ballsPosY);
     glUniform1fv_FA(radiiLoc, MAX_BALLS_NUM, radii);
+    glUniform1f_FA(aRatioLoc, aRatio);
 
     drawBalls();
     
@@ -73,9 +104,10 @@ int main(int argc, char* argv[])
     enableVSyncIfPossible(&contextData, &userVSyncData);
 #endif
 
-    clock_t prevTime = clock();
+    struct timespec prevTime;
+    clock_gettime(CLOCK_MONOTONIC_RAW, &prevTime);
     double dt = 0.0f;
-    
+
     while(1)
     {        
         XEvent event;
@@ -108,10 +140,21 @@ int main(int argc, char* argv[])
         
         glXSwapBuffers(contextData.display, contextData.window);
 
-        clock_t nowTime = clock();
-        dt = (nowTime - prevTime) *100000.0f / CLOCKS_PER_SEC;
-        prevTime = nowTime;
+        struct timespec nowTime;
+        clock_gettime(CLOCK_MONOTONIC_RAW, &nowTime);
+        dt = (nowTime.tv_sec - prevTime.tv_sec) * 1000000
+            + (nowTime.tv_nsec - prevTime.tv_nsec) / 1000;
 
+        dt /= 1000.0f;
+        
+        prevTime = nowTime;
+        
+        updatePositions(aRatio, dt);
+
+        glUniform1fv_FA(ballsPosXLoc, MAX_BALLS_NUM, ballsPosX);
+        glUniform1fv_FA(ballsPosYLoc, MAX_BALLS_NUM, ballsPosY);
+
+        printf("dt = %f\n", dt);
         //sleep(1);
     }
 
