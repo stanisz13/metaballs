@@ -4,17 +4,19 @@
 
 int isRunning = 1;
 
-#define MAX_BALLS_NUM 1
+#define MAX_BALLS_NUM 20
 float ballsPosX[MAX_BALLS_NUM];
 float ballsPosY[MAX_BALLS_NUM];
+float radii[MAX_BALLS_NUM];
 
 void drawBalls()
 {
-    logS("X:");
+    newLine();
     for (unsigned i = 0; i < MAX_BALLS_NUM; ++i)
     {
-        printf("%d: X:%d Y:%d\n", i, ballsPosX[i], ballsPosY[i]);
+        printf("%d: X:%f Y:%f\n", i, ballsPosX[i], ballsPosY[i]);
     }
+    newLine();
 }
 
 int main(int argc, char* argv[])
@@ -50,11 +52,16 @@ int main(int argc, char* argv[])
     glUseProgram_FA(metaProgram);
 
     ballsPosX[0] = 0.5f;
+    ballsPosY[1] = 0.3f;
+    radii[0] = 0.2f;
+    radii[1] = 0.5f;
     
     int ballsPosXLoc = glGetUniformLocation_FA(metaProgram, "ballsPosX");
     int ballsPosYLoc = glGetUniformLocation_FA(metaProgram, "ballsPosY");
+    int radiiLoc = glGetUniformLocation_FA(metaProgram, "radii");
     glUniform1fv_FA(ballsPosXLoc, MAX_BALLS_NUM, ballsPosX);
     glUniform1fv_FA(ballsPosYLoc, MAX_BALLS_NUM, ballsPosY);
+    glUniform1fv_FA(radiiLoc, MAX_BALLS_NUM, radii);
 
     drawBalls();
     

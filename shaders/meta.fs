@@ -3,15 +3,15 @@
 in vec2 posPass;
 out vec4 fragColor;
 
-const int MAX_BALLS_NUM = 1;
+const int MAX_BALLS_NUM = 2;
 
 uniform float ballsPosX[MAX_BALLS_NUM];
 uniform float ballsPosY[MAX_BALLS_NUM];
-
+uniform float radii[MAX_BALLS_NUM];
 
 const float epsilon = 0.00000001f;
 
-bool equalsZaro(const float a)
+bool equalsZero(const float a)
 {
     return abs(a - epsilon) < epsilon;
 }
@@ -22,20 +22,23 @@ void main()
 
     vec2 pos = posPass;
     pos.x *= 1920.0f / 1080.0f;
-    pos *= 5.0f;
-
+    
     float distSum = 0.0f;
+    float radSum = 0.0f;
     for (int i = 0; i < MAX_BALLS_NUM; ++i)
     {
         float curX = ballsPosX[i] - pos.x;
         float curY = ballsPosY[i] - pos.y;
         float dist = curX * curX + curY * curY;
+        dist = sqrt(dist);
         distSum += dist;
+
+        radSum += radii[i];
     }
   
-    if (!equalsZaro(distSum))
+    if (!equalsZero(distSum) && !equalsZero(radSum))
     {
-        color.r = mix(0.0f, 1.0f, 1.0f/sqrt(distSum));
+        color.r = mix(0.0f, 1.0f, radSum/distSum);
     }
     
     fragColor = vec4(color, 1.0f);
