@@ -77,11 +77,13 @@ int main(int argc, char* argv[])
     ballsPosY[1] = 0.3f;
     radii[0] = 0.1f;
     radii[1] = 0.1f;
+    radii[2] = 0.2f;
 
-    velocityX[0] = 0.001f;
-    velocityY[0] = -0.002f;
-    velocityX[1] = -0.002f;
-    velocityY[1] = 0.004f;
+    velocityX[0] = 0.0005f;
+    velocityY[0] = -0.0008f;
+    velocityX[1] = -0.0008f;
+    velocityY[1] = 0.0009f;
+    velocityX[2] = 0.00006f;
     
     float aRatio = contextData.windowWidth / contextData.windowHeight;
     
@@ -144,7 +146,6 @@ int main(int argc, char* argv[])
         clock_gettime(CLOCK_MONOTONIC_RAW, &nowTime);
         dt = (nowTime.tv_sec - prevTime.tv_sec) * 1000000
             + (nowTime.tv_nsec - prevTime.tv_nsec) / 1000;
-
         dt /= 1000.0f;
         
         prevTime = nowTime;

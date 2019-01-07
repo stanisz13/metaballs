@@ -5,7 +5,7 @@ out vec4 fragColor;
 
 uniform float aRatio;
 
-const int MAX_BALLS_NUM = 2;
+const int MAX_BALLS_NUM = 3;
 
 uniform float ballsPosX[MAX_BALLS_NUM];
 uniform float ballsPosY[MAX_BALLS_NUM];
@@ -34,12 +34,10 @@ void main()
         dist = sqrt(dist);
         sum += radii[i] / dist;
     }
-
-    sum = sqrt(sum);
     
     if (!equalsZero(sum))
     {
-        color = vec3(sum);
+        color.r = sum;
     }
     
     fragColor = vec4(color, 1.0f);
