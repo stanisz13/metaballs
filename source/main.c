@@ -32,6 +32,9 @@ int main(int argc, char* argv[])
     configureScreenQuad(&squad);
 #endif
 
+
+    unsigned metaProgram = createShaderProgram("shaders/meta.vs", "shaders/meta.fs");
+    glUseProgram_FA(metaProgram);
     
     glDisable(GL_DEPTH_TEST);
 #if 0
@@ -87,6 +90,6 @@ int main(int argc, char* argv[])
     freeScreenQuad(&squad);
 #endif
 
-    
+    glDeleteShader_FA(metaProgram);
     return 0;
 }
