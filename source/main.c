@@ -4,6 +4,19 @@
 
 int isRunning = 1;
 
+#define MAX_BALLS_NUM 1
+float ballsPosX[MAX_BALLS_NUM];
+float ballsPosY[MAX_BALLS_NUM];
+
+void drawBalls()
+{
+    logS("X:");
+    for (unsigned i = 0; i < MAX_BALLS_NUM; ++i)
+    {
+        printf("%d: X:%d Y:%d\n", i, ballsPosX[i], ballsPosY[i]);
+    }
+}
+
 int main(int argc, char* argv[])
 {
     newLine();
@@ -35,10 +48,22 @@ int main(int argc, char* argv[])
 
     unsigned metaProgram = createShaderProgram("shaders/meta.vs", "shaders/meta.fs");
     glUseProgram_FA(metaProgram);
+
+    ballsPosX[0] = 0.5f;
+    
+    int ballsPosXLoc = glGetUniformLocation_FA(metaProgram, "ballsPosX");
+    int ballsPosYLoc = glGetUniformLocation_FA(metaProgram, "ballsPosY");
+    glUniform1fv_FA(ballsPosXLoc, MAX_BALLS_NUM, ballsPosX);
+    glUniform1fv_FA(ballsPosYLoc, MAX_BALLS_NUM, ballsPosY);
+
+    drawBalls();
     
     glDisable(GL_DEPTH_TEST);
+
 #if 0
     disableVSyncIfPossible(&contextData, &userVSyncData);
+#else
+    enableVSyncIfPossible(&contextData, &userVSyncData);
 #endif
 
     clock_t prevTime = clock();
@@ -79,6 +104,7 @@ int main(int argc, char* argv[])
         clock_t nowTime = clock();
         dt = (nowTime - prevTime) *100000.0f / CLOCKS_PER_SEC;
         prevTime = nowTime;
+
         //sleep(1);
     }
 
