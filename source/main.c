@@ -31,16 +31,6 @@ void updatePositions(const float aRatio, const float dt)
     }
 }
 
-void drawBalls()
-{
-    newLine();
-    for (unsigned i = 0; i < MAX_BALLS_NUM; ++i)
-    {
-        printf("%d: X:%f Y:%f\n", i, ballsPosX[i], ballsPosY[i]);
-    }
-    newLine();
-}
-
 int main(int argc, char* argv[])
 {
     newLine();
@@ -95,8 +85,6 @@ int main(int argc, char* argv[])
     int radiiLoc = glGetUniformLocation_FA(metaProgram, "radii");
     glUniform1fv_FA(radiiLoc, MAX_BALLS_NUM, radii);
     glUniform1f_FA(aRatioLoc, aRatio);
-
-    drawBalls();
     
     glDisable(GL_DEPTH_TEST);
 
@@ -108,8 +96,10 @@ int main(int argc, char* argv[])
 
     struct timespec prevTime;
     clock_gettime(CLOCK_MONOTONIC_RAW, &prevTime);
-    double dt = 0.0f;
-
+    float dt = 0.0f;
+    float elapsed = 0.0f;
+    float maxFrameTimeNoticed = 0.0f;
+    
     while(1)
     {        
         XEvent event;
@@ -155,8 +145,22 @@ int main(int argc, char* argv[])
         glUniform1fv_FA(ballsPosXLoc, MAX_BALLS_NUM, ballsPosX);
         glUniform1fv_FA(ballsPosYLoc, MAX_BALLS_NUM, ballsPosY);
 
+        elapsed += dt;
+        if (dt - maxFrameTimeNoticed > EPSILON)
+        {
+            maxFrameTimeNoticed = dt;
+        }
+
+#if 1
+        if (elapsed > 2.0f * 1000)
+        {
+            printf("Longest frame: %f\n", maxFrameTimeNoticed);
+            elapsed = 0.0f;
+            maxFrameTimeNoticed = 0.0f;
+        }
+#else
         printf("dt = %f\n", dt);
-        //sleep(1);
+#endif
     }
 
     freeContextData(&contextData);
