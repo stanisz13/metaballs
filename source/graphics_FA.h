@@ -1,5 +1,5 @@
-#ifndef GLLOADER_H
-#define GLLOADER_H
+#ifndef GRAPHICS_FA_H
+#define GRAPHICS_FA_H
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
@@ -8,7 +8,7 @@
 #include <GL/gl.h>
 #include <GL/glx.h>
 #include "glext.h"
-#include "log.h"
+#include "log_FA.h"
 
 #define USE_EBO_TO_DRAW_QUAD 1
 #define V_SYNC 0 
