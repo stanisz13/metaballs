@@ -105,6 +105,8 @@ unsigned maxUnsigned(const unsigned v, const unsigned w);
 //NOTE(Stanisz13): RANDOM
 void setRandomSeed(const unsigned s);
 
+void setRandomSeedTime();
+
 unsigned getRandomUnsignedOnInterval(const unsigned a, const unsigned b);
 
 float getRandomFloatOnInterval(const float a, const float b);

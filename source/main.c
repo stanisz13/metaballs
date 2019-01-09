@@ -21,11 +21,11 @@ int ballsNum = 10;
 
 void generateBalls()
 {
-    float r = 1.0f / (100.0f * ballsNum);
+    float r = 1.0f / (3.0f * ballsNum);
     
     for (unsigned i = 0; i < ballsNum; ++i)
     {
-        velocity[i] = scaleFVec2ByConstant(getRandomFVec2OnInterval(-1.0f, -1.0f), 0.0004f);
+        velocity[i] = scaleFVec2ByConstant(getRandomFVec2OnInterval(-1.0f, 1.0f), 0.0004f);
         ballsPos[i] = getRandomFVec2OnInterval(-1.0f, 1.0f);
         radii[i] = r;
     }
@@ -82,7 +82,7 @@ int main(int argc, char* argv[])
     unsigned metaProgram = createShaderProgram("shaders/meta.vs", "shaders/meta.fs");
     glUseProgram_FA(metaProgram);
 
-    setRandomSeed(13123877);
+    setRandomSeedTime();
     generateBalls();
     
 

@@ -1,6 +1,7 @@
 #include "maths_FA.h"
 #include <limits.h>
 #include <float.h>
+#include <time.h>
 
 float absFloat(const float v)
 {
@@ -130,6 +131,11 @@ unsigned xorshift()
 void setRandomSeed(const unsigned s)
 {
     randomSeries_FA.seed = s;
+}
+
+void setRandomSeedTime()
+{
+    randomSeries_FA.seed = (unsigned)time(0);
 }
 
 float getRandomFloatZeroOne()
