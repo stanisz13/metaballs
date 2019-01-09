@@ -7,8 +7,7 @@ uniform float aRatio;
 
 const int MAX_BALLS_NUM = 3;
 
-uniform float ballsPosX[MAX_BALLS_NUM];
-uniform float ballsPosY[MAX_BALLS_NUM];
+uniform vec2 ballsPos[MAX_BALLS_NUM];
 uniform float radii[MAX_BALLS_NUM];
 
 const float epsilon = 0.00000001f;
@@ -28,8 +27,8 @@ void main()
     float sum = 0.0f;
     for (int i = 0; i < MAX_BALLS_NUM; ++i)
     {
-        float curX = ballsPosX[i] - pos.x;
-        float curY = ballsPosY[i] - pos.y;
+        float curX = ballsPos[i].x - pos.x;
+        float curY = ballsPos[i].y - pos.y;
         float dist = curX * curX + curY * curY;
         dist = sqrt(dist);
         sum += radii[i] / dist;
@@ -37,7 +36,7 @@ void main()
     
     if (!equalsZero(sum))
     {
-        color.r = sum;
+        color = vec3(sum);
     }
     
     fragColor = vec4(color, 1.0f);

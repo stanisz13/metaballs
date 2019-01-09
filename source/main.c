@@ -3,31 +3,35 @@
 #include <time.h>
 #include "maths_FA.h"
 
+typedef struct
+{
+    float x;
+    float y;
+    
+} vec2;
+
 int isRunning = 1;
 
 #define MAX_BALLS_NUM 20
-float ballsPosX[MAX_BALLS_NUM];
-float ballsPosY[MAX_BALLS_NUM];
+fvec2 ballsPos[MAX_BALLS_NUM];
 float radii[MAX_BALLS_NUM];
-
-float velocityX[MAX_BALLS_NUM];
-float velocityY[MAX_BALLS_NUM];
+fvec2 velocity[MAX_BALLS_NUM];
 
 void updatePositions(const float aRatio, const float dt)
 {
     for (unsigned i = 0; i < MAX_BALLS_NUM; ++i)
     {
-        ballsPosX[i] += velocityX[i] * dt;
-        ballsPosY[i] += velocityY[i] * dt;
+        ballsPos[i].x += velocity[i].x * dt;
+        ballsPos[i].y += velocity[i].y * dt;
 
-        if (ballsPosX[i] > aRatio || ballsPosX[i] < -aRatio)
+        if (ballsPos[i].x > aRatio || ballsPos[i].x < -aRatio)
         {
-            velocityX[i] *= -1.0f;
+            velocity[i].x *= -1.0f;
         }
 
-        if (ballsPosY[i] > 1.0f || ballsPosY[i] < -1.0f)
+        if (ballsPos[i].y > 1.0f || ballsPos[i].y < -1.0f)
         {
-            velocityY[i] *= -1.0f;
+            velocity[i].y *= -1.0f;
         }
     }
 }
@@ -64,24 +68,21 @@ int main(int argc, char* argv[])
     unsigned metaProgram = createShaderProgram("shaders/meta.vs", "shaders/meta.fs");
     glUseProgram_FA(metaProgram);
 
-    ballsPosX[0] = 0.2f;
-    ballsPosY[1] = 0.3f;
+    ballsPos[0].x = 0.2f;
+    ballsPos[1].y = 0.3f;
     radii[0] = 0.1f;
     radii[1] = 0.1f;
     radii[2] = 0.2f;
 
-    velocityX[0] = 0.0005f;
-    velocityY[0] = -0.0008f;
-    velocityX[1] = -0.0008f;
-    velocityY[1] = 0.0009f;
-    velocityX[2] = 0.00006f;
-    
-    float aRatio = contextData.windowWidth / contextData.windowHeight;
-    
+    setRandomSeed(1339877);
+    velocity[0] = getRandomFVec2OnInterval(-0.0004f, 0.0004f);
+    velocity[1] = getRandomFVec2OnInterval(-0.0004f, 0.0004f);
+    velocity[2] = getRandomFVec2OnInterval(-0.0004f, 0.0004f);
 
-    
-    int ballsPosXLoc = glGetUniformLocation_FA(metaProgram, "ballsPosX");
-    int ballsPosYLoc = glGetUniformLocation_FA(metaProgram, "ballsPosY");
+
+    float aRatio = contextData.windowWidth / contextData.windowHeight;
+
+    int ballsPosLoc = glGetUniformLocation_FA(metaProgram, "ballsPos");
     int aRatioLoc = glGetUniformLocation_FA(metaProgram, "aRatio");
     int radiiLoc = glGetUniformLocation_FA(metaProgram, "radii");
     glUniform1fv_FA(radiiLoc, MAX_BALLS_NUM, radii);
@@ -143,8 +144,7 @@ int main(int argc, char* argv[])
         
         updatePositions(aRatio, dt);
 
-        glUniform1fv_FA(ballsPosXLoc, MAX_BALLS_NUM, ballsPosX);
-        glUniform1fv_FA(ballsPosYLoc, MAX_BALLS_NUM, ballsPosY);
+        glUniform2fv_FA(ballsPosLoc, MAX_BALLS_NUM, (const float*)ballsPos);
 
         elapsed += dt;
         if (dt - maxFrameTimeNoticed > EPSILON)
