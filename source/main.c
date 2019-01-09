@@ -6,21 +6,26 @@
 int isRunning = 1;
 
 #define MAX_BALLS_NUM 20
+
 fvec2 ballsPos[MAX_BALLS_NUM];
-float radii[MAX_BALLS_NUM];
 fvec2 velocity[MAX_BALLS_NUM];
+float radii[MAX_BALLS_NUM];
+fvec3 colors[MAX_BALLS_NUM];
+fvec2 accels[MAX_BALLS_NUM];
 
 int ballsNum = 10;
 
 void generateBalls()
 {
-    float r = 1.0f / (3.0f * ballsNum);
+    float r = 1.0f / (2.0f * ballsNum);
     
     for (unsigned i = 0; i < ballsNum; ++i)
     {
         velocity[i] = scaleFVec2ByConstant(getRandomFVec2OnInterval(-1.0f, 1.0f), 0.0004f);
+        accels[i] = scaleFVec2ByConstant(getRandomFVec2OnInterval(-1.0f, 1.0f), 0.000004f);
         ballsPos[i] = getRandomFVec2OnInterval(-1.0f, 1.0f);
         radii[i] = r;
+        colors[i] = getRandomFVec3OnInterval(0.5f, 1.0f);
     }
 }
 
@@ -28,17 +33,22 @@ void updatePositions(const float aRatio, const float dt)
 {
     for (unsigned i = 0; i < MAX_BALLS_NUM; ++i)
     {
+        velocity[i].x += 0.5f * accels[i].x * dt;
+        velocity[i].y += 0.5f * accels[i].y * dt;
+
         ballsPos[i].x += velocity[i].x * dt;
         ballsPos[i].y += velocity[i].y * dt;
 
         if (ballsPos[i].x > aRatio || ballsPos[i].x < -aRatio)
         {
             velocity[i].x *= -1.0f;
+            velocity[i] = scaleFVec2ByConstant(velocity[i], 0.3f);
         }
 
         if (ballsPos[i].y > 1.0f || ballsPos[i].y < -1.0f)
         {
             velocity[i].y *= -1.0f;
+            velocity[i] = scaleFVec2ByConstant(velocity[i], 0.3f);
         }
     }
 }
@@ -85,11 +95,13 @@ int main(int argc, char* argv[])
     int aRatioLoc = glGetUniformLocation_FA(metaProgram, "aRatio");
     int radiiLoc = glGetUniformLocation_FA(metaProgram, "radii");
     int ballsNumLoc = glGetUniformLocation_FA(metaProgram, "ballsNum");
-
+    int colorsLoc = glGetUniformLocation_FA(metaProgram, "colors");
+    
     glUniform1fv_FA(radiiLoc, MAX_BALLS_NUM, radii);
+    glUniform3fv_FA(colorsLoc, MAX_BALLS_NUM, (const float *)colors);
     glUniform1f_FA(aRatioLoc, aRatio);
     glUniform1i_FA(ballsNumLoc, ballsNum);
-
+    
     glDisable(GL_DEPTH_TEST);
 
 #if 0
