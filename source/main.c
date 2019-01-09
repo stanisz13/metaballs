@@ -17,6 +17,20 @@ fvec2 ballsPos[MAX_BALLS_NUM];
 float radii[MAX_BALLS_NUM];
 fvec2 velocity[MAX_BALLS_NUM];
 
+int ballsNum = 10;
+
+void generateBalls()
+{
+    float r = 1.0f / (100.0f * ballsNum);
+    
+    for (unsigned i = 0; i < ballsNum; ++i)
+    {
+        velocity[i] = scaleFVec2ByConstant(getRandomFVec2OnInterval(-1.0f, -1.0f), 0.0004f);
+        ballsPos[i] = getRandomFVec2OnInterval(-1.0f, 1.0f);
+        radii[i] = r;
+    }
+}
+
 void updatePositions(const float aRatio, const float dt)
 {
     for (unsigned i = 0; i < MAX_BALLS_NUM; ++i)
@@ -68,26 +82,21 @@ int main(int argc, char* argv[])
     unsigned metaProgram = createShaderProgram("shaders/meta.vs", "shaders/meta.fs");
     glUseProgram_FA(metaProgram);
 
-    ballsPos[0].x = 0.2f;
-    ballsPos[1].y = 0.3f;
-    radii[0] = 0.1f;
-    radii[1] = 0.1f;
-    radii[2] = 0.2f;
-
-    setRandomSeed(1339877);
-    velocity[0] = getRandomFVec2OnInterval(-0.0004f, 0.0004f);
-    velocity[1] = getRandomFVec2OnInterval(-0.0004f, 0.0004f);
-    velocity[2] = getRandomFVec2OnInterval(-0.0004f, 0.0004f);
-
+    setRandomSeed(13123877);
+    generateBalls();
+    
 
     float aRatio = contextData.windowWidth / contextData.windowHeight;
 
     int ballsPosLoc = glGetUniformLocation_FA(metaProgram, "ballsPos");
     int aRatioLoc = glGetUniformLocation_FA(metaProgram, "aRatio");
     int radiiLoc = glGetUniformLocation_FA(metaProgram, "radii");
+    int ballsNumLoc = glGetUniformLocation_FA(metaProgram, "ballsNum");
+
     glUniform1fv_FA(radiiLoc, MAX_BALLS_NUM, radii);
     glUniform1f_FA(aRatioLoc, aRatio);
-    
+    glUniform1i_FA(ballsNumLoc, ballsNum);
+
     glDisable(GL_DEPTH_TEST);
 
 #if 0

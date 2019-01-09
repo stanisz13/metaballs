@@ -4,8 +4,9 @@ in vec2 posPass;
 out vec4 fragColor;
 
 uniform float aRatio;
+uniform int ballsNum;
 
-const int MAX_BALLS_NUM = 3;
+const int MAX_BALLS_NUM = 20;
 
 uniform vec2 ballsPos[MAX_BALLS_NUM];
 uniform float radii[MAX_BALLS_NUM];
@@ -25,7 +26,7 @@ void main()
     pos.x *= aRatio;
     
     float sum = 0.0f;
-    for (int i = 0; i < MAX_BALLS_NUM; ++i)
+    for (int i = 0; i < ballsNum; ++i)
     {
         float curX = ballsPos[i].x - pos.x;
         float curY = ballsPos[i].y - pos.y;

@@ -302,6 +302,10 @@ void loadFunctionPointers()
     glUniform2f_FA = (PFNGLUNIFORM2FPROC)glXGetProcAddress((const unsigned char*)"glUniform2f");
     glUniform1fv_FA = (PFNGLUNIFORM2FVPROC)glXGetProcAddress((const unsigned char*)"glUniform1fv");
     glUniform2fv_FA = (PFNGLUNIFORM2FVPROC)glXGetProcAddress((const unsigned char*)"glUniform2fv");
+    glUniform1ui_FA = (PFNGLUNIFORM1UIPROC)glXGetProcAddress((const unsigned char*)"glUniform1ui");
+    glUniform1uiv_FA = (PFNGLUNIFORM1UIVPROC)glXGetProcAddress((const unsigned char*)"glUniform1uiv");
+    glUniform1i_FA = (PFNGLUNIFORM1IPROC)glXGetProcAddress((const unsigned char*)"glUniform1i");
+    glUniform1iv_FA = (PFNGLUNIFORM1IVPROC)glXGetProcAddress((const unsigned char*)"glUniform1iv");
         
     //NOTE(Stanisz13): PROGRAMS
     glCreateProgram_FA = (PFNGLCREATEPROGRAMPROC)glXGetProcAddress((const unsigned char*)"glCreateProgram");

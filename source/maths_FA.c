@@ -326,3 +326,123 @@ ivec4 getRandomIVec4OnInterval(const int a, const int b)
     
     return res;
 }
+
+fvec2 scaleFVec2ByConstant(const fvec2 v, const float s)
+{
+    fvec2 res = v;
+
+    res.x *= s;
+    res.y *= s;
+
+    return res;
+}
+
+dvec2 scaleDVec2ByConstant(const dvec2 v, const double s)
+{
+    dvec2 res = v;
+
+    res.x *= s;
+    res.y *= s;
+
+    return res;
+}
+
+uvec2 scaleUVec2ByConstant(const uvec2 v, const unsigned s)
+{
+    uvec2 res = v;
+
+    res.x *= s;
+    res.y *= s;
+
+    return res;
+}
+
+ivec2 scaleIVec2ByConstant(const ivec2 v, const int s)
+{
+    ivec2 res = v;
+
+    res.x *= s;
+    res.y *= s;
+
+    return res;
+}
+
+fvec3 scaleFVec3ByConstant(const fvec3 v, const float s)
+{
+    fvec3 res = v;
+
+    res.x *= s;
+    res.y *= s;
+
+    return res;
+}
+
+dvec3 scaleDVec3ByConstant(const dvec3 v, const double s)
+{
+    dvec3 res = v;
+
+    res.x *= s;
+    res.y *= s;
+
+    return res;
+}
+
+uvec3 scaleUVec3ByConstant(const uvec3 v, const unsigned s)
+{
+    uvec3 res = v;
+
+    res.x *= s;
+    res.y *= s;
+
+    return res;
+}
+
+ivec3 scaleIVec3ByConstant(const ivec3 v, const int s)
+{
+    ivec3 res = v;
+
+    res.x *= s;
+    res.y *= s;
+
+    return res;
+}
+
+fvec4 scaleFVec4ByConstant(const fvec4 v, const float s)
+{
+    fvec4 res = v;
+
+    res.x *= s;
+    res.y *= s;
+
+    return res;
+}
+
+dvec4 scaleDVec4ByConstant(const dvec4 v, const double s)
+{
+    dvec4 res = v;
+
+    res.x *= s;
+    res.y *= s;
+
+    return res;
+}
+
+uvec4 scaleUVec4ByConstant(const uvec4 v, const unsigned s)
+{
+    uvec4 res = v;
+
+    res.x *= s;
+    res.y *= s;
+
+    return res;
+}
+
+ivec4 scaleIVec4ByConstant(const ivec4 v, const int s)
+{
+    ivec4 res = v;
+
+    res.x *= s;
+    res.y *= s;
+
+    return res;
+}
