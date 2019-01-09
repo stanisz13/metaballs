@@ -3,13 +3,6 @@
 #include <time.h>
 #include "maths_FA.h"
 
-typedef struct
-{
-    float x;
-    float y;
-    
-} vec2;
-
 int isRunning = 1;
 
 #define MAX_BALLS_NUM 20
