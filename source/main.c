@@ -13,7 +13,7 @@ float radii[MAX_BALLS_NUM];
 fvec3 colors[MAX_BALLS_NUM];
 fvec2 accels[MAX_BALLS_NUM];
 
-int ballsNum = 10;
+int ballsNum = 5;
 
 void generateBalls()
 {
@@ -167,12 +167,12 @@ int main(int argc, char* argv[])
 #if 1
         if (elapsed > 2.0f * 1000)
         {
-            printf("Longest frame: %f\n", maxFrameTimeNoticed);
+            printf("Longest frame: %f [%f FPS]\n", maxFrameTimeNoticed, 1000.0f / maxFrameTimeNoticed);
             elapsed = 0.0f;
             maxFrameTimeNoticed = 0.0f;
         }
 #else
-        printf("dt = %f\n", dt);
+        printf("dt = %f [%f FPS]\n", dt, 1.0f/dt);
 #endif
     }
 

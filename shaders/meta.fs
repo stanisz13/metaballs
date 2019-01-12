@@ -6,7 +6,7 @@ out vec4 fragColor;
 uniform float aRatio;
 uniform int ballsNum;
 
-const int MAX_BALLS_NUM = 20;
+const int MAX_BALLS_NUM = 200;
 
 uniform vec2 ballsPos[MAX_BALLS_NUM];
 uniform float radii[MAX_BALLS_NUM];

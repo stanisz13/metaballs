@@ -693,3 +693,45 @@ ivec4 hadamardIVec4(const ivec4 v, const ivec4 w)
     
     return res;
 }
+
+fmat2x2 mulFMat2x2by2x2(const fmat2x2 a, const fmat2x2 b)
+{
+    fmat2x2 res = {};
+    
+    return res;
+}
+
+fmat2x2 mulFMat2x3by3x2(const fmat2x3 a, const fmat3x2 b);
+fmat2x2 mulFMat2x4by4x2(const fmat2x4 a, const fmat4x2 b);
+
+fmat2x3 mulFMat2x2by2x3(const fmat2x2 a, const fmat2x3 b);
+fmat2x3 mulFMat2x3by3x3(const fmat2x3 a, const fmat3x3 b);
+fmat2x3 mulFMat2x4by4x3(const fmat2x4 a, const fmat4x3 b);
+
+fmat2x4 mulFMat2x2by2x4(const fmat2x2 a, const fmat2x4 b);
+fmat2x4 mulFMat2x3by3x4(const fmat2x3 a, const fmat3x4 b);
+fmat2x4 mulFMat2x4by4x4(const fmat2x4 a, const fmat4x4 b);
+
+fmat3x2 mulFMat3x2by2x2(const fmat3x2 a, const fmat2x2 b);
+fmat3x2 mulFMat3x3by3x2(const fmat3x3 a, const fmat3x2 b);
+fmat3x2 mulFMat3x4by4x2(const fmat3x4 a, const fmat4x2 b);
+
+fmat4x2 mulFMat4x2by2x2(const fmat4x2 a, const fmat2x2 b);
+fmat4x2 mulFMat4x3by3x2(const fmat4x3 a, const fmat3x2 b);
+fmat4x2 mulFMat4x4by4x2(const fmat4x4 a, const fmat4x2 b);
+
+fmat3x3 mulFMat3x2by2x3(const fmat3x2 a, const fmat2x3 b);
+fmat3x3 mulFMat3x3by3x3(const fmat3x3 a, const fmat3x3 b);
+fmat3x3 mulFMat3x4by4x3(const fmat3x4 a, const fmat4x3 b);
+
+fmat3x4 mulFMat3x2by2x4(const fmat3x2 a, const fmat2x4 b);
+fmat3x4 mulFMat3x3by3x4(const fmat3x3 a, const fmat3x4 b);
+fmat3x4 mulFMat3x4by4x4(const fmat3x4 a, const fmat4x4 b);
+
+fmat4x3 mulFMat4x2by2x3(const fmat4x2 a, const fmat2x3 b);
+fmat4x3 mulFMat4x3by3x3(const fmat4x3 a, const fmat3x3 b);
+fmat4x3 mulFMat4x4by4x3(const fmat4x4 a, const fmat4x3 b);
+
+fmat4x4 mulFMat4x2by2x4(const fmat4x2 a, const fmat2x4 b);
+fmat4x4 mulFMat4x3by3x4(const fmat4x3 a, const fmat3x4 b);
+fmat4x4 mulFMat4x4by4x4(const fmat4x4 a, const fmat4x4 b);
