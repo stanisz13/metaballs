@@ -452,3 +452,244 @@ ivec4 scaleIVec4ByConstant(const ivec4 v, const int s)
 
     return res;
 }
+
+fvec2 addFVec2(const fvec2 v, const fvec2 w)
+{
+    fvec2 res = v;
+    res.x += w.x;
+    res.y += w.y;
+
+    return res;
+}
+
+dvec2 addDVec2(const dvec2 v, const dvec2 w)
+{
+    dvec2 res = v;
+    res.x += w.x;
+    res.y += w.y;
+
+    return res;
+}
+
+uvec2 addUVec2(const uvec2 v, const uvec2 w)
+{
+    uvec2 res = v;
+    res.x += w.x;
+    res.y += w.y;
+
+    return res;
+}
+
+ivec2 addIVec2(const ivec2 v, const ivec2 w)
+{
+    ivec2 res = v;
+    res.x += w.x;
+    res.y += w.y;
+
+    return res;
+}
+
+fvec3 addFVec3(const fvec3 v, const fvec3 w)
+{
+    fvec3 res = v;
+    res.x += w.x;
+    res.y += w.y;
+    res.z += w.z;
+    
+    return res;
+}
+dvec3 addDVec3(const dvec3 v, const dvec3 w)
+{
+    dvec3 res = v;
+    res.x += w.x;
+    res.y += w.y;
+    res.z += w.z;
+    
+    return res;
+}
+
+uvec3 addUVec3(const uvec3 v, const uvec3 w)
+{
+    uvec3 res = v;
+    res.x += w.x;
+    res.y += w.y;
+    res.z += w.z;
+    
+    return res;
+}
+
+ivec3 addIVec3(const ivec3 v, const ivec3 w)
+{
+    ivec3 res = v;
+    res.x += w.x;
+    res.y += w.y;
+    res.z += w.z;
+    
+    return res;
+}
+
+fvec4 addFVec4(const fvec4 v, const fvec4 w)
+{
+    fvec4 res = v;
+    res.x += w.x;
+    res.y += w.y;
+    res.z += w.z;
+    res.w += w.w;
+    
+    return res;
+}
+
+dvec4 addDVec4(const dvec4 v, const dvec4 w)
+{
+    dvec4 res = v;
+    res.x += w.x;
+    res.y += w.y;
+    res.z += w.z;
+    res.w += w.w;
+    
+    return res;
+
+}
+
+uvec4 addUVec4(const uvec4 v, const uvec4 w)
+{
+    uvec4 res = v;
+    res.x += w.x;
+    res.y += w.y;
+    res.z += w.z;
+    res.w += w.w;
+    
+    return res;
+
+}
+
+ivec4 addIVec4(const ivec4 v, const ivec4 w)
+{
+    ivec4 res = v;
+    res.x += w.x;
+    res.y += w.y;
+    res.z += w.z;
+    res.w += w.w;
+    
+    return res;
+}
+
+fvec2 hadamardFVec2(const fvec2 v, const fvec2 w)
+{
+    fvec2 res = v;
+    res.x *= w.x;
+    res.y *= w.y;
+
+    return res;
+}
+
+dvec2 hadamardDVec2(const dvec2 v, const dvec2 w)
+{
+    dvec2 res = v;
+    res.x *= w.x;
+    res.y *= w.y;
+
+    return res;
+}
+
+uvec2 hadamardUVec2(const uvec2 v, const uvec2 w)
+{
+    uvec2 res = v;
+    res.x *= w.x;
+    res.y *= w.y;
+
+    return res;
+}
+
+ivec2 hadamardIVec2(const ivec2 v, const ivec2 w)
+{
+    ivec2 res = v;
+    res.x *= w.x;
+    res.y *= w.y;
+
+    return res;
+}
+
+fvec3 hadamardFVec3(const fvec3 v, const fvec3 w)
+{
+    fvec3 res = v;
+    res.x *= w.x;
+    res.y *= w.y;
+    res.z *= w.z;
+    
+    return res;
+}
+
+dvec3 hadamardDVec3(const dvec3 v, const dvec3 w)
+{
+    dvec3 res = v;
+    res.x *= w.x;
+    res.y *= w.y;
+    res.z *= w.z;
+    
+    return res;
+}
+
+uvec3 hadamardUVec3(const uvec3 v, const uvec3 w)
+{
+    uvec3 res = v;
+    res.x *= w.x;
+    res.y *= w.y;
+    res.z *= w.z;
+    
+    return res;
+}
+
+ivec3 hadamardIVec3(const ivec3 v, const ivec3 w)
+{
+    ivec3 res = v;
+    res.x *= w.x;
+    res.y *= w.y;
+    res.z *= w.z;
+    
+    return res;
+}
+
+fvec4 hadamardFVec4(const fvec4 v, const fvec4 w)
+{
+    fvec4 res = v;
+    res.x *= w.x;
+    res.y *= w.y;
+    res.z *= w.z;
+    res.w *= w.w;
+    
+    return res;
+}
+
+dvec4 hadamardDVec4(const dvec4 v, const dvec4 w)
+{
+    dvec4 res = v;
+    res.x *= w.x;
+    res.y *= w.y;
+    res.z *= w.z;
+    res.w *= w.w;
+    
+    return res;
+}
+
+uvec4 hadamardUVec4(const uvec4 v, const uvec4 w)
+{
+    uvec4 res = v;
+    res.x *= w.x;
+    res.y *= w.y;
+    res.z *= w.z;
+    res.w *= w.w;
+    
+    return res;
+}
+
+ivec4 hadamardIVec4(const ivec4 v, const ivec4 w)
+{
+    ivec4 res = v;
+    res.x *= w.x;
+    res.y *= w.y;
+    res.z *= w.z;
+    res.w *= w.w;
+    
+    return res;
+}
