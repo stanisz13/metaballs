@@ -5,7 +5,7 @@
 
 int isRunning = 1;
 
-#define MAX_BALLS_NUM 100
+#define MAX_BALLS_NUM 50
 
 fvec2 ballsPos[MAX_BALLS_NUM];
 fvec2 velocity[MAX_BALLS_NUM];
@@ -13,7 +13,7 @@ float radii[MAX_BALLS_NUM];
 fvec3 colors[MAX_BALLS_NUM];
 fvec2 accels[MAX_BALLS_NUM];
 
-int ballsNum = 100;
+int ballsNum = 50;
 
 void generateBalls()
 {
