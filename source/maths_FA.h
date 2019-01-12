@@ -130,5 +130,4 @@ uvec4 scaleUVec4ByConstant(const uvec4 v, const unsigned s);
 ivec4 scaleIVec4ByConstant(const ivec4 v, const int s);
 
 
-
 #endif

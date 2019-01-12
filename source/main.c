@@ -22,7 +22,7 @@ void generateBalls()
     for (unsigned i = 0; i < ballsNum; ++i)
     {
         velocity[i] = scaleFVec2ByConstant(getRandomFVec2OnInterval(-1.0f, 1.0f), 0.0004f);
-        accels[i] = scaleFVec2ByConstant(getRandomFVec2OnInterval(-1.0f, 1.0f), 0.000004f);
+        accels[i].y = getRandomFloatOnInterval(-0.00001f, -0.000001f);
         ballsPos[i] = getRandomFVec2OnInterval(-1.0f, 1.0f);
         radii[i] = r;
         colors[i] = getRandomFVec3OnInterval(0.5f, 1.0f);
@@ -42,13 +42,11 @@ void updatePositions(const float aRatio, const float dt)
         if (ballsPos[i].x > aRatio || ballsPos[i].x < -aRatio)
         {
             velocity[i].x *= -1.0f;
-            velocity[i] = scaleFVec2ByConstant(velocity[i], 0.3f);
         }
 
         if (ballsPos[i].y > 1.0f || ballsPos[i].y < -1.0f)
         {
             velocity[i].y *= -1.0f;
-            velocity[i] = scaleFVec2ByConstant(velocity[i], 0.3f);
         }
     }
 }
