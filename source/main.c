@@ -29,7 +29,7 @@ void generateBalls()
     }
 }
 
-void updatePositions(const float aRatio, const float dt)
+void updatePositions(float aRatio, float dt)
 {
     for (unsigned i = 0; i < MAX_BALLS_NUM; ++i)
     {

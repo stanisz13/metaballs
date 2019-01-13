@@ -133,8 +133,8 @@ void freeContextData(ContextData* cdata);
 
 void loadFunctionPointers();
 
-unsigned RGBAtoUnsigned(const unsigned char r, const unsigned char g,
-                        const unsigned char b, const unsigned char a);
+unsigned RGBAtoUnsigned(unsigned char r, unsigned char g,
+                        unsigned char b, unsigned char a);
 
 unsigned ColorToUnsigned(const Color* c);
 
@@ -144,14 +144,14 @@ void drawTextureWithBufferData(ContextData* cdata, PixelBufferData* pdata);
 
 void freePixelData(PixelBufferData* pdata);
 
-float lerpFloat(const float v0, const float v1, const float t);
+float lerpFloat(float v0, float v1, float t);
 
 Color lerpColor(const Color* a, const Color* b, const float t);
 
 unsigned ColorToUnsigned(const Color* c);
 
-Color RGBAtoColor(const unsigned char r, const unsigned char g,
-                  const unsigned char b, const unsigned char a);
+Color RGBAtoColor(unsigned char r, unsigned char g,
+                  unsigned char b, unsigned char a);
 
 void configurePingpongBuffer(ContextData* cdata, PingpongBuffer* pbuf);
 

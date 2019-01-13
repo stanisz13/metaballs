@@ -337,8 +337,8 @@ void loadFunctionPointers()
     glXSwapIntervalSGI_FA = (PFNGLXSWAPINTERVALSGIPROC)glXGetProcAddress((const unsigned char*)"glXSwapIntervalSGI");
 }
 
-unsigned RGBAtoUnsigned(const unsigned char r, const unsigned char g,
-                        const unsigned char b, const unsigned char a)
+unsigned RGBAtoUnsigned(unsigned char r, unsigned char g,
+                        unsigned char b, unsigned char a)
 {
     return (a << 24) | (b << 16) | (g << 8) | r;    
 }
@@ -401,7 +401,7 @@ void freePixelData(PixelBufferData* pdata)
     free(pdata->pixels);
 }
 
-float lerp(const float v0, const float v1, const float t)
+float lerp(float v0, float v1, float t)
 {
     return (1 - t) * v0 + t * v1;
 }
