@@ -7,11 +7,11 @@ int isRunning = 1;
 
 #define MAX_BALLS_NUM 10
 
-fvec2 ballsPos[MAX_BALLS_NUM];
-fvec2 velocity[MAX_BALLS_NUM];
+FVec2 ballsPos[MAX_BALLS_NUM];
+FVec2 velocity[MAX_BALLS_NUM];
 float radii[MAX_BALLS_NUM];
-fvec3 colors[MAX_BALLS_NUM];
-fvec2 accels[MAX_BALLS_NUM];
+FVec3 colors[MAX_BALLS_NUM];
+FVec2 accels[MAX_BALLS_NUM];
 
 int ballsNum = 5;
 
@@ -70,11 +70,11 @@ int main(int argc, char* argv[])
     configureOpenGL(&contextData, &userVSyncData);
     loadFunctionPointers();
 
-    fvec2 col1;
+    FVec2 col1;
     col1.x = 2.0f;
     col1.y = 1.0f;
 
-    fvec2 col2;
+    FVec2 col2;
     col2.x = 0;
     col2.y = 0;
 

@@ -202,9 +202,9 @@ int getRandomIntOnInterval(const int a, const int b)
     return res;
 }
 
-fvec2 getRandomFVec2OnInterval(const float a, const float b)
+FVec2 getRandomFVec2OnInterval(const float a, const float b)
 {
-    fvec2 res;
+    FVec2 res;
 
     res.x = getRandomFloatOnInterval(a, b);
     res.y = getRandomFloatOnInterval(a, b);
@@ -212,9 +212,9 @@ fvec2 getRandomFVec2OnInterval(const float a, const float b)
     return res;
 }
 
-dvec2 getRandomDVec2OnInterval(const double a, const double b)
+DVec2 getRandomDVec2OnInterval(const double a, const double b)
 {
-    dvec2 res;
+    DVec2 res;
 
     res.x = getRandomDoubleOnInterval(a, b);
     res.y = getRandomDoubleOnInterval(a, b);
@@ -222,9 +222,9 @@ dvec2 getRandomDVec2OnInterval(const double a, const double b)
     return res;
 }
 
-uvec2 getRandomUVec2OnInterval(const unsigned a, const unsigned b)
+UVec2 getRandomUVec2OnInterval(const unsigned a, const unsigned b)
 {
-    uvec2 res;
+    UVec2 res;
 
     res.x = getRandomUnsignedOnInterval(a, b);
     res.y = getRandomUnsignedOnInterval(a, b);
@@ -232,9 +232,9 @@ uvec2 getRandomUVec2OnInterval(const unsigned a, const unsigned b)
     return res;
 }
 
-ivec2 getRandomIVec2OnInterval(const int a, const int b)
+IVec2 getRandomIVec2OnInterval(const int a, const int b)
 {
-    ivec2 res;
+    IVec2 res;
 
     res.x = getRandomIntOnInterval(a, b);
     res.y = getRandomIntOnInterval(a, b);
@@ -242,9 +242,9 @@ ivec2 getRandomIVec2OnInterval(const int a, const int b)
     return res;
 }
 
-fvec3 getRandomFVec3OnInterval(const float a, const float b)
+FVec3 getRandomFVec3OnInterval(const float a, const float b)
 {
-    fvec3 res;
+    FVec3 res;
 
     res.x = getRandomFloatOnInterval(a, b);
     res.y = getRandomFloatOnInterval(a, b);
@@ -253,9 +253,9 @@ fvec3 getRandomFVec3OnInterval(const float a, const float b)
     return res;
 }
 
-dvec3 getRandomDVec3OnInterval(const double a, const double b)
+DVec3 getRandomDVec3OnInterval(const double a, const double b)
 {
-    dvec3 res;
+    DVec3 res;
 
     res.x = getRandomDoubleOnInterval(a, b);
     res.y = getRandomDoubleOnInterval(a, b);
@@ -264,9 +264,9 @@ dvec3 getRandomDVec3OnInterval(const double a, const double b)
     return res;
 }
 
-uvec3 getRandomUVec3OnInterval(const unsigned a, const unsigned b)
+UVec3 getRandomUVec3OnInterval(const unsigned a, const unsigned b)
 {
-    uvec3 res;
+    UVec3 res;
 
     res.x = getRandomUnsignedOnInterval(a, b);
     res.y = getRandomUnsignedOnInterval(a, b);
@@ -275,9 +275,9 @@ uvec3 getRandomUVec3OnInterval(const unsigned a, const unsigned b)
     return res;
 }
 
-ivec3 getRandomIVec3OnInterval(const int a, const int b)
+IVec3 getRandomIVec3OnInterval(const int a, const int b)
 {
-    ivec3 res;
+    IVec3 res;
 
     res.x = getRandomIntOnInterval(a, b);
     res.y = getRandomIntOnInterval(a, b);
@@ -286,9 +286,9 @@ ivec3 getRandomIVec3OnInterval(const int a, const int b)
     return res;
 }
 
-fvec4 getRandomFVec4OnInterval(const float a, const float b)
+FVec4 getRandomFVec4OnInterval(const float a, const float b)
 {
-    fvec4 res;
+    FVec4 res;
 
     res.x = getRandomFloatOnInterval(a, b);
     res.y = getRandomFloatOnInterval(a, b);
@@ -298,9 +298,9 @@ fvec4 getRandomFVec4OnInterval(const float a, const float b)
     return res;
 }
 
-dvec4 getRandomDVec4OnInterval(const double a, const double b)
+DVec4 getRandomDVec4OnInterval(const double a, const double b)
 {
-    dvec4 res;
+    DVec4 res;
 
     res.x = getRandomDoubleOnInterval(a, b);
     res.y = getRandomDoubleOnInterval(a, b);
@@ -310,9 +310,9 @@ dvec4 getRandomDVec4OnInterval(const double a, const double b)
     return res;
 }
 
-uvec4 getRandomUVec4OnInterval(const unsigned a, const unsigned b)
+UVec4 getRandomUVec4OnInterval(const unsigned a, const unsigned b)
 {
-    uvec4 res;
+    UVec4 res;
 
     res.x = getRandomUnsignedOnInterval(a, b);
     res.y = getRandomUnsignedOnInterval(a, b);
@@ -322,9 +322,9 @@ uvec4 getRandomUVec4OnInterval(const unsigned a, const unsigned b)
     return res;
 }
 
-ivec4 getRandomIVec4OnInterval(const int a, const int b)
+IVec4 getRandomIVec4OnInterval(const int a, const int b)
 {
-    ivec4 res;
+    IVec4 res;
 
     res.x = getRandomIntOnInterval(a, b);
     res.y = getRandomIntOnInterval(a, b);
@@ -334,9 +334,9 @@ ivec4 getRandomIVec4OnInterval(const int a, const int b)
     return res;
 }
 
-fvec2 scaleFVec2ByConstant(const fvec2 v, const float s)
+FVec2 scaleFVec2ByConstant(const FVec2 v, const float s)
 {
-    fvec2 res = v;
+    FVec2 res = v;
 
     res.x *= s;
     res.y *= s;
@@ -344,9 +344,9 @@ fvec2 scaleFVec2ByConstant(const fvec2 v, const float s)
     return res;
 }
 
-dvec2 scaleDVec2ByConstant(const dvec2 v, const double s)
+DVec2 scaleDVec2ByConstant(const DVec2 v, const double s)
 {
-    dvec2 res = v;
+    DVec2 res = v;
 
     res.x *= s;
     res.y *= s;
@@ -354,9 +354,9 @@ dvec2 scaleDVec2ByConstant(const dvec2 v, const double s)
     return res;
 }
 
-uvec2 scaleUVec2ByConstant(const uvec2 v, const unsigned s)
+UVec2 scaleUVec2ByConstant(const UVec2 v, const unsigned s)
 {
-    uvec2 res = v;
+    UVec2 res = v;
 
     res.x *= s;
     res.y *= s;
@@ -364,9 +364,9 @@ uvec2 scaleUVec2ByConstant(const uvec2 v, const unsigned s)
     return res;
 }
 
-ivec2 scaleIVec2ByConstant(const ivec2 v, const int s)
+IVec2 scaleIVec2ByConstant(const IVec2 v, const int s)
 {
-    ivec2 res = v;
+    IVec2 res = v;
 
     res.x *= s;
     res.y *= s;
@@ -374,9 +374,9 @@ ivec2 scaleIVec2ByConstant(const ivec2 v, const int s)
     return res;
 }
 
-fvec3 scaleFVec3ByConstant(const fvec3 v, const float s)
+FVec3 scaleFVec3ByConstant(const FVec3 v, const float s)
 {
-    fvec3 res = v;
+    FVec3 res = v;
 
     res.x *= s;
     res.y *= s;
@@ -384,9 +384,9 @@ fvec3 scaleFVec3ByConstant(const fvec3 v, const float s)
     return res;
 }
 
-dvec3 scaleDVec3ByConstant(const dvec3 v, const double s)
+DVec3 scaleDVec3ByConstant(const DVec3 v, const double s)
 {
-    dvec3 res = v;
+    DVec3 res = v;
 
     res.x *= s;
     res.y *= s;
@@ -394,9 +394,9 @@ dvec3 scaleDVec3ByConstant(const dvec3 v, const double s)
     return res;
 }
 
-uvec3 scaleUVec3ByConstant(const uvec3 v, const unsigned s)
+UVec3 scaleUVec3ByConstant(const UVec3 v, const unsigned s)
 {
-    uvec3 res = v;
+    UVec3 res = v;
 
     res.x *= s;
     res.y *= s;
@@ -404,9 +404,9 @@ uvec3 scaleUVec3ByConstant(const uvec3 v, const unsigned s)
     return res;
 }
 
-ivec3 scaleIVec3ByConstant(const ivec3 v, const int s)
+IVec3 scaleIVec3ByConstant(const IVec3 v, const int s)
 {
-    ivec3 res = v;
+    IVec3 res = v;
 
     res.x *= s;
     res.y *= s;
@@ -414,9 +414,9 @@ ivec3 scaleIVec3ByConstant(const ivec3 v, const int s)
     return res;
 }
 
-fvec4 scaleFVec4ByConstant(const fvec4 v, const float s)
+FVec4 scaleFVec4ByConstant(const FVec4 v, const float s)
 {
-    fvec4 res = v;
+    FVec4 res = v;
 
     res.x *= s;
     res.y *= s;
@@ -424,9 +424,9 @@ fvec4 scaleFVec4ByConstant(const fvec4 v, const float s)
     return res;
 }
 
-dvec4 scaleDVec4ByConstant(const dvec4 v, const double s)
+DVec4 scaleDVec4ByConstant(const DVec4 v, const double s)
 {
-    dvec4 res = v;
+    DVec4 res = v;
 
     res.x *= s;
     res.y *= s;
@@ -434,9 +434,9 @@ dvec4 scaleDVec4ByConstant(const dvec4 v, const double s)
     return res;
 }
 
-uvec4 scaleUVec4ByConstant(const uvec4 v, const unsigned s)
+UVec4 scaleUVec4ByConstant(const UVec4 v, const unsigned s)
 {
-    uvec4 res = v;
+    UVec4 res = v;
 
     res.x *= s;
     res.y *= s;
@@ -444,9 +444,9 @@ uvec4 scaleUVec4ByConstant(const uvec4 v, const unsigned s)
     return res;
 }
 
-ivec4 scaleIVec4ByConstant(const ivec4 v, const int s)
+IVec4 scaleIVec4ByConstant(const IVec4 v, const int s)
 {
-    ivec4 res = v;
+    IVec4 res = v;
 
     res.x *= s;
     res.y *= s;
@@ -454,64 +454,54 @@ ivec4 scaleIVec4ByConstant(const ivec4 v, const int s)
     return res;
 }
 
-fvec2 addFVec2(const fvec2 v, const fvec2 w)
+FVec2 addFVec2(const FVec2 v, const FVec2 w)
 {
-    fvec2 res = v;
+    FVec2 res = v;
     res.x += w.x;
     res.y += w.y;
 
     return res;
 }
 
-dvec2 addDVec2(const dvec2 v, const dvec2 w)
+DVec2 addDVec2(const DVec2 v, const DVec2 w)
 {
-    dvec2 res = v;
+    DVec2 res = v;
     res.x += w.x;
     res.y += w.y;
 
     return res;
 }
 
-uvec2 addUVec2(const uvec2 v, const uvec2 w)
+UVec2 addUVec2(const UVec2 v, const UVec2 w)
 {
-    uvec2 res = v;
+    UVec2 res = v;
     res.x += w.x;
     res.y += w.y;
 
     return res;
 }
 
-ivec2 addIVec2(const ivec2 v, const ivec2 w)
+IVec2 addIVec2(const IVec2 v, const IVec2 w)
 {
-    ivec2 res = v;
+    IVec2 res = v;
     res.x += w.x;
     res.y += w.y;
 
     return res;
 }
 
-fvec3 addFVec3(const fvec3 v, const fvec3 w)
+FVec3 addFVec3(const FVec3 v, const FVec3 w)
 {
-    fvec3 res = v;
-    res.x += w.x;
-    res.y += w.y;
-    res.z += w.z;
-    
-    return res;
-}
-dvec3 addDVec3(const dvec3 v, const dvec3 w)
-{
-    dvec3 res = v;
+    FVec3 res = v;
     res.x += w.x;
     res.y += w.y;
     res.z += w.z;
     
     return res;
 }
-
-uvec3 addUVec3(const uvec3 v, const uvec3 w)
+DVec3 addDVec3(const DVec3 v, const DVec3 w)
 {
-    uvec3 res = v;
+    DVec3 res = v;
     res.x += w.x;
     res.y += w.y;
     res.z += w.z;
@@ -519,9 +509,9 @@ uvec3 addUVec3(const uvec3 v, const uvec3 w)
     return res;
 }
 
-ivec3 addIVec3(const ivec3 v, const ivec3 w)
+UVec3 addUVec3(const UVec3 v, const UVec3 w)
 {
-    ivec3 res = v;
+    UVec3 res = v;
     res.x += w.x;
     res.y += w.y;
     res.z += w.z;
@@ -529,32 +519,30 @@ ivec3 addIVec3(const ivec3 v, const ivec3 w)
     return res;
 }
 
-fvec4 addFVec4(const fvec4 v, const fvec4 w)
+IVec3 addIVec3(const IVec3 v, const IVec3 w)
 {
-    fvec4 res = v;
+    IVec3 res = v;
     res.x += w.x;
     res.y += w.y;
     res.z += w.z;
-    res.w += w.w;
     
     return res;
 }
 
-dvec4 addDVec4(const dvec4 v, const dvec4 w)
+FVec4 addFVec4(const FVec4 v, const FVec4 w)
 {
-    dvec4 res = v;
+    FVec4 res = v;
     res.x += w.x;
     res.y += w.y;
     res.z += w.z;
     res.w += w.w;
     
     return res;
-
 }
 
-uvec4 addUVec4(const uvec4 v, const uvec4 w)
+DVec4 addDVec4(const DVec4 v, const DVec4 w)
 {
-    uvec4 res = v;
+    DVec4 res = v;
     res.x += w.x;
     res.y += w.y;
     res.z += w.z;
@@ -564,9 +552,21 @@ uvec4 addUVec4(const uvec4 v, const uvec4 w)
 
 }
 
-ivec4 addIVec4(const ivec4 v, const ivec4 w)
+UVec4 addUVec4(const UVec4 v, const UVec4 w)
 {
-    ivec4 res = v;
+    UVec4 res = v;
+    res.x += w.x;
+    res.y += w.y;
+    res.z += w.z;
+    res.w += w.w;
+    
+    return res;
+
+}
+
+IVec4 addIVec4(const IVec4 v, const IVec4 w)
+{
+    IVec4 res = v;
     res.x += w.x;
     res.y += w.y;
     res.z += w.z;
@@ -575,55 +575,45 @@ ivec4 addIVec4(const ivec4 v, const ivec4 w)
     return res;
 }
 
-fvec2 hadamardFVec2(const fvec2 v, const fvec2 w)
+FVec2 hadamardFVec2(const FVec2 v, const FVec2 w)
 {
-    fvec2 res = v;
+    FVec2 res = v;
     res.x *= w.x;
     res.y *= w.y;
 
     return res;
 }
 
-dvec2 hadamardDVec2(const dvec2 v, const dvec2 w)
+DVec2 hadamardDVec2(const DVec2 v, const DVec2 w)
 {
-    dvec2 res = v;
+    DVec2 res = v;
     res.x *= w.x;
     res.y *= w.y;
 
     return res;
 }
 
-uvec2 hadamardUVec2(const uvec2 v, const uvec2 w)
+UVec2 hadamardUVec2(const UVec2 v, const UVec2 w)
 {
-    uvec2 res = v;
+    UVec2 res = v;
     res.x *= w.x;
     res.y *= w.y;
 
     return res;
 }
 
-ivec2 hadamardIVec2(const ivec2 v, const ivec2 w)
+IVec2 hadamardIVec2(const IVec2 v, const IVec2 w)
 {
-    ivec2 res = v;
+    IVec2 res = v;
     res.x *= w.x;
     res.y *= w.y;
 
     return res;
 }
 
-fvec3 hadamardFVec3(const fvec3 v, const fvec3 w)
+FVec3 hadamardFVec3(const FVec3 v, const FVec3 w)
 {
-    fvec3 res = v;
-    res.x *= w.x;
-    res.y *= w.y;
-    res.z *= w.z;
-    
-    return res;
-}
-
-dvec3 hadamardDVec3(const dvec3 v, const dvec3 w)
-{
-    dvec3 res = v;
+    FVec3 res = v;
     res.x *= w.x;
     res.y *= w.y;
     res.z *= w.z;
@@ -631,9 +621,9 @@ dvec3 hadamardDVec3(const dvec3 v, const dvec3 w)
     return res;
 }
 
-uvec3 hadamardUVec3(const uvec3 v, const uvec3 w)
+DVec3 hadamardDVec3(const DVec3 v, const DVec3 w)
 {
-    uvec3 res = v;
+    DVec3 res = v;
     res.x *= w.x;
     res.y *= w.y;
     res.z *= w.z;
@@ -641,9 +631,9 @@ uvec3 hadamardUVec3(const uvec3 v, const uvec3 w)
     return res;
 }
 
-ivec3 hadamardIVec3(const ivec3 v, const ivec3 w)
+UVec3 hadamardUVec3(const UVec3 v, const UVec3 w)
 {
-    ivec3 res = v;
+    UVec3 res = v;
     res.x *= w.x;
     res.y *= w.y;
     res.z *= w.z;
@@ -651,9 +641,19 @@ ivec3 hadamardIVec3(const ivec3 v, const ivec3 w)
     return res;
 }
 
-fvec4 hadamardFVec4(const fvec4 v, const fvec4 w)
+IVec3 hadamardIVec3(const IVec3 v, const IVec3 w)
 {
-    fvec4 res = v;
+    IVec3 res = v;
+    res.x *= w.x;
+    res.y *= w.y;
+    res.z *= w.z;
+    
+    return res;
+}
+
+FVec4 hadamardFVec4(const FVec4 v, const FVec4 w)
+{
+    FVec4 res = v;
     res.x *= w.x;
     res.y *= w.y;
     res.z *= w.z;
@@ -662,9 +662,9 @@ fvec4 hadamardFVec4(const fvec4 v, const fvec4 w)
     return res;
 }
 
-dvec4 hadamardDVec4(const dvec4 v, const dvec4 w)
+DVec4 hadamardDVec4(const DVec4 v, const DVec4 w)
 {
-    dvec4 res = v;
+    DVec4 res = v;
     res.x *= w.x;
     res.y *= w.y;
     res.z *= w.z;
@@ -673,9 +673,9 @@ dvec4 hadamardDVec4(const dvec4 v, const dvec4 w)
     return res;
 }
 
-uvec4 hadamardUVec4(const uvec4 v, const uvec4 w)
+UVec4 hadamardUVec4(const UVec4 v, const UVec4 w)
 {
-    uvec4 res = v;
+    UVec4 res = v;
     res.x *= w.x;
     res.y *= w.y;
     res.z *= w.z;
@@ -684,9 +684,9 @@ uvec4 hadamardUVec4(const uvec4 v, const uvec4 w)
     return res;
 }
 
-ivec4 hadamardIVec4(const ivec4 v, const ivec4 w)
+IVec4 hadamardIVec4(const IVec4 v, const IVec4 w)
 {
-    ivec4 res = v;
+    IVec4 res = v;
     res.x *= w.x;
     res.y *= w.y;
     res.z *= w.z;
@@ -749,7 +749,7 @@ fmat4 setFMat4ByElements(const float* data)
     return res;
 }
 
-fmat2 setFMat2ByVectors(const fvec2 a, const fvec2 b)
+fmat2 setFMat2ByVectors(const FVec2 a, const FVec2 b)
 {
     fmat2 res;
 
@@ -759,7 +759,7 @@ fmat2 setFMat2ByVectors(const fvec2 a, const fvec2 b)
     return res;
 }
 
-fmat3 setFMat3ByVectors(const fvec3 a, const fvec3 b, const fvec3 c)
+fmat3 setFMat3ByVectors(const FVec3 a, const FVec3 b, const FVec3 c)
 {
     fmat3 res;
 
@@ -770,7 +770,7 @@ fmat3 setFMat3ByVectors(const fvec3 a, const fvec3 b, const fvec3 c)
     return res;
 }
 
-fmat4 setFMat4ByVectors(const fvec4 a, const fvec4 b, const fvec4 c, const fvec4 d)
+fmat4 setFMat4ByVectors(const FVec4 a, const FVec4 b, const FVec4 c, const FVec4 d)
 {
     fmat4 res;
 

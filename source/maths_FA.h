@@ -18,7 +18,7 @@ typedef struct
         };
         float mem[2];
     };
-} fvec2;
+} FVec2;
 
 typedef struct
 {
@@ -30,7 +30,7 @@ typedef struct
         };
         double mem[2];
     };
-} dvec2;
+} DVec2;
 
 typedef struct
 {
@@ -42,7 +42,7 @@ typedef struct
         };
         unsigned mem[2];
     };
-} uvec2;
+} UVec2;
 
 typedef struct
 {
@@ -54,7 +54,7 @@ typedef struct
         };
         int mem[2];
     };
-} ivec2;
+} IVec2;
 
 typedef struct
 {
@@ -66,7 +66,7 @@ typedef struct
         };
         float mem[3];
     };
-} fvec3;
+} FVec3;
 
 typedef struct
 {
@@ -78,7 +78,7 @@ typedef struct
         };
         double mem[3];
     };
-} dvec3;
+} DVec3;
 
 typedef struct
 {
@@ -90,7 +90,7 @@ typedef struct
         };
         unsigned mem[3];
     };
-} uvec3;
+} UVec3;
 
 typedef struct
 {
@@ -102,7 +102,7 @@ typedef struct
         };
         int mem[3];
     };
-} ivec3;
+} IVec3;
 
 typedef struct
 {
@@ -114,7 +114,7 @@ typedef struct
         };
         float mem[4];
     };
-} fvec4;
+} FVec4;
 
 typedef struct
 {
@@ -126,7 +126,7 @@ typedef struct
         };
         double mem[4];
     };
-} dvec4;
+} DVec4;
 
 typedef struct
 {
@@ -138,7 +138,7 @@ typedef struct
         };
         unsigned mem[4];
     };
-} uvec4;
+} UVec4;
 
 typedef struct
 {
@@ -150,7 +150,7 @@ typedef struct
         };
         int mem[4];
     };
-} ivec4;
+} IVec4;
 
 //NOTE(Stanisz13): MATRICES
 //NOTE(Stanisz13): FLOAT
@@ -160,7 +160,7 @@ typedef struct
     {
         struct
         {
-            fvec2 col1, col2;
+            FVec2 col1, col2;
         };
         float mem[4];
     };
@@ -172,7 +172,7 @@ typedef struct
     {
         struct
         {
-            fvec3 col1, col2, col3;
+            FVec3 col1, col2, col3;
         };
         float mem[9];
     };
@@ -184,7 +184,7 @@ typedef struct
     {
         struct
         {
-            fvec4 col1, col2, col3, col4;
+            FVec4 col1, col2, col3, col4;
         };
         float mem[16];
     };
@@ -225,59 +225,61 @@ float getRandomFloatOnInterval(const float a, const float b);
 double getRandomDoubleOnInterval(const double a, const double b);
 int getRandomIntOnInterval(const int a, const int b);
 
-fvec2 getRandomFVec2OnInterval(const float a, const float b);
-dvec2 getRandomDVec2OnInterval(const double a, const double b);
-uvec2 getRandomUVec2OnInterval(const unsigned a, const unsigned b);
-ivec2 getRandomIVec2OnInterval(const int a, const int b);
-fvec3 getRandomFVec3OnInterval(const float a, const float b);
-dvec3 getRandomDVec3OnInterval(const double a, const double b);
-uvec3 getRandomUVec3OnInterval(const unsigned a, const unsigned b);
-ivec3 getRandomIVec3OnInterval(const int a, const int b);
-fvec4 getRandomFVec4OnInterval(const float a, const float b);
-dvec4 getRandomDVec4OnInterval(const double a, const double b);
-uvec4 getRandomUVec4OnInterval(const unsigned a, const unsigned b);
-ivec4 getRandomIVec4OnInterval(const int a, const int b);
+FVec2 getRandomFVec2OnInterval(const float a, const float b);
+DVec2 getRandomDVec2OnInterval(const double a, const double b);
+UVec2 getRandomUVec2OnInterval(const unsigned a, const unsigned b);
+IVec2 getRandomIVec2OnInterval(const int a, const int b);
+FVec3 getRandomFVec3OnInterval(const float a, const float b);
+DVec3 getRandomDVec3OnInterval(const double a, const double b);
+UVec3 getRandomUVec3OnInterval(const unsigned a, const unsigned b);
+IVec3 getRandomIVec3OnInterval(const int a, const int b);
+FVec4 getRandomFVec4OnInterval(const float a, const float b);
+DVec4 getRandomDVec4OnInterval(const double a, const double b);
+UVec4 getRandomUVec4OnInterval(const unsigned a, const unsigned b);
+IVec4 getRandomIVec4OnInterval(const int a, const int b);
 
 //NOTE(Stanisz13): VECTORS
-fvec2 scaleFVec2ByConstant(const fvec2 v, const float s);
-dvec2 scaleDVec2ByConstant(const dvec2 v, const double s);
-uvec2 scaleUVec2ByConstant(const uvec2 v, const unsigned s);
-ivec2 scaleIVec2ByConstant(const ivec2 v, const int s);
-fvec3 scaleFVec3ByConstant(const fvec3 v, const float s);
-dvec3 scaleDVec3ByConstant(const dvec3 v, const double s);
-uvec3 scaleUVec3ByConstant(const uvec3 v, const unsigned s);
-ivec3 scaleIVec3ByConstant(const ivec3 v, const int s);
-fvec4 scaleFVec4ByConstant(const fvec4 v, const float s);
-dvec4 scaleDVec4ByConstant(const dvec4 v, const double s);
-uvec4 scaleUVec4ByConstant(const uvec4 v, const unsigned s);
-ivec4 scaleIVec4ByConstant(const ivec4 v, const int s);
+FVec2 scaleFVec2ByConstant(const FVec2 v, const float s);
+DVec2 scaleDVec2ByConstant(const DVec2 v, const double s);
+UVec2 scaleUVec2ByConstant(const UVec2 v, const unsigned s);
+IVec2 scaleIVec2ByConstant(const IVec2 v, const int s);
+FVec3 scaleFVec3ByConstant(const FVec3 v, const float s);
+DVec3 scaleDVec3ByConstant(const DVec3 v, const double s);
+UVec3 scaleUVec3ByConstant(const UVec3 v, const unsigned s);
+IVec3 scaleIVec3ByConstant(const IVec3 v, const int s);
+FVec4 scaleFVec4ByConstant(const FVec4 v, const float s);
+DVec4 scaleDVec4ByConstant(const DVec4 v, const double s);
+UVec4 scaleUVec4ByConstant(const UVec4 v, const unsigned s);
+IVec4 scaleIVec4ByConstant(const IVec4 v, const int s);
 
-fvec2 addFVec2(const fvec2 v, const fvec2 w);
-dvec2 addDVec2(const dvec2 v, const dvec2 w);
-uvec2 addUVec2(const uvec2 v, const uvec2 w);
-ivec2 addIVec2(const ivec2 v, const ivec2 w);
-fvec3 addFVec3(const fvec3 v, const fvec3 w);
-dvec3 addDVec3(const dvec3 v, const dvec3 w);
-uvec3 addUVec3(const uvec3 v, const uvec3 w);
-ivec3 addIVec3(const ivec3 v, const ivec3 w);
-fvec4 addFVec4(const fvec4 v, const fvec4 w);
-dvec4 addDVec4(const dvec4 v, const dvec4 w);
-uvec4 addUVec4(const uvec4 v, const uvec4 w);
-ivec4 addIVec4(const ivec4 v, const ivec4 w);
+FVec2 addFVec2(const FVec2 v, const FVec2 w);
+DVec2 addDVec2(const DVec2 v, const DVec2 w);
+UVec2 addUVec2(const UVec2 v, const UVec2 w);
+IVec2 addIVec2(const IVec2 v, const IVec2 w);
+FVec3 addFVec3(const FVec3 v, const FVec3 w);
+DVec3 addDVec3(const DVec3 v, const DVec3 w);
+UVec3 addUVec3(const UVec3 v, const UVec3 w);
+IVec3 addIVec3(const IVec3 v, const IVec3 w);
+FVec4 addFVec4(const FVec4 v, const FVec4 w);
+DVec4 addDVec4(const DVec4 v, const DVec4 w);
+UVec4 addUVec4(const UVec4 v, const UVec4 w);
+IVec4 addIVec4(const IVec4 v, const IVec4 w);
 
-fvec2 hadamardFVec2(const fvec2 v, const fvec2 w);
-dvec2 hadamardDVec2(const dvec2 v, const dvec2 w);
-uvec2 hadamardUVec2(const uvec2 v, const uvec2 w);
-ivec2 hadamardIVec2(const ivec2 v, const ivec2 w);
-fvec3 hadamardFVec3(const fvec3 v, const fvec3 w);
-dvec3 hadamardDVec3(const dvec3 v, const dvec3 w);
-uvec3 hadamardUVec3(const uvec3 v, const uvec3 w);
-ivec3 hadamardIVec3(const ivec3 v, const ivec3 w);
-fvec4 hadamardFVec4(const fvec4 v, const fvec4 w);
-dvec4 hadamardDVec4(const dvec4 v, const dvec4 w);
-uvec4 hadamardUVec4(const uvec4 v, const uvec4 w);
-ivec4 hadamardIVec4(const ivec4 v, const ivec4 w);
+FVec2 hadamardFVec2(const FVec2 v, const FVec2 w);
+DVec2 hadamardDVec2(const DVec2 v, const DVec2 w);
+UVec2 hadamardUVec2(const UVec2 v, const UVec2 w);
+IVec2 hadamardIVec2(const IVec2 v, const IVec2 w);
+FVec3 hadamardFVec3(const FVec3 v, const FVec3 w);
+DVec3 hadamardDVec3(const DVec3 v, const DVec3 w);
+UVec3 hadamardUVec3(const UVec3 v, const UVec3 w);
+IVec3 hadamardIVec3(const IVec3 v, const IVec3 w);
+FVec4 hadamardFVec4(const FVec4 v, const FVec4 w);
+DVec4 hadamardDVec4(const DVec4 v, const DVec4 w);
+UVec4 hadamardUVec4(const UVec4 v, const UVec4 w);
+IVec4 hadamardIVec4(const IVec4 v, const IVec4 w);
 
+float dotProductFVec2(const FVec2 v, const FVec2 w);
+    
 //NOTE(Stanisz13): MATRICES
 
 float* accessFMat2(fmat2* m, const unsigned x, const unsigned y);
@@ -288,9 +290,9 @@ fmat2 setFMat2ByElements(const float* data);
 fmat3 setFMat3ByElements(const float* data);
 fmat4 setFMat4ByElements(const float* data);
 
-fmat2 setFMat2ByVectors(const fvec2 a, const fvec2 b);
-fmat3 setFMat3ByVectors(const fvec3 a, const fvec3 b, const fvec3 c);
-fmat4 setFMat4ByVectors(const fvec4 a, const fvec4 b, const fvec4 c, const fvec4 d);
+fmat2 setFMat2ByVectors(const FVec2 a, const FVec2 b);
+fmat3 setFMat3ByVectors(const FVec3 a, const FVec3 b, const FVec3 c);
+fmat4 setFMat4ByVectors(const FVec4 a, const FVec4 b, const FVec4 c, const FVec4 d);
 
 fmat2 mulFMat2(const fmat2 a, const fmat2 b);
 fmat3 mulFMat3(const fmat3 a, const fmat3 b);
