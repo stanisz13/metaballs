@@ -156,17 +156,38 @@ typedef struct
 //NOTE(Stanisz13): FLOAT
 typedef struct
 {
-    float mem[4];
+    union
+    {
+        struct
+        {
+            fvec2 col1, col2;
+        };
+        float mem[4];
+    };
 } fmat2;
 
 typedef struct
 {
-    float mem[9];
+    union
+    {
+        struct
+        {
+            fvec3 col1, col2, col3;
+        };
+        float mem[9];
+    };
 } fmat3;
 
 typedef struct
 {
-    float mem[16];
+    union
+    {
+        struct
+        {
+            fvec4 col1, col2, col3, col4;
+        };
+        float mem[16];
+    };
 } fmat4;
 
 //NOTE(Stanisz13): RANDOM
@@ -266,6 +287,10 @@ float* accessFMat4(fmat4* m, const unsigned x, const unsigned y);
 fmat2 setFMat2ByElements(const float* data);
 fmat3 setFMat3ByElements(const float* data);
 fmat4 setFMat4ByElements(const float* data);
+
+fmat2 setFMat2ByVectors(const fvec2 a, const fvec2 b);
+fmat3 setFMat3ByVectors(const fvec3 a, const fvec3 b, const fvec3 c);
+fmat4 setFMat4ByVectors(const fvec4 a, const fvec4 b, const fvec4 c, const fvec4 d);
 
 fmat2 mulFMat2(const fmat2 a, const fmat2 b);
 fmat3 mulFMat3(const fmat3 a, const fmat3 b);

@@ -70,10 +70,16 @@ int main(int argc, char* argv[])
     configureOpenGL(&contextData, &userVSyncData);
     loadFunctionPointers();
 
-    float fibdata[4] = {2, 1, 0, 0};
+    fvec2 col1;
+    col1.x = 2.0f;
+    col1.y = 1.0f;
 
-    fmat2 fib = setFMat2ByElements(fibdata);
-    fmat2 ori = setFMat2ByElements(fibdata);
+    fvec2 col2;
+    col2.x = 0;
+    col2.y = 0;
+
+    fmat2 fib = setFMat2ByVectors(col1, col2);
+    fmat2 ori = setFMat2ByVectors(col1, col2);
 
     printf("%f %f %f %f\n", fib.mem[0], fib.mem[1], fib.mem[2], fib.mem[3]);
     printf("%f %f %f %f\n", ori.mem[0], ori.mem[1], ori.mem[2], ori.mem[3]);

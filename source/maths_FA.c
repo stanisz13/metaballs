@@ -749,6 +749,39 @@ fmat4 setFMat4ByElements(const float* data)
     return res;
 }
 
+fmat2 setFMat2ByVectors(const fvec2 a, const fvec2 b)
+{
+    fmat2 res;
+
+    res.col1 = a;
+    res.col2 = b;
+    
+    return res;
+}
+
+fmat3 setFMat3ByVectors(const fvec3 a, const fvec3 b, const fvec3 c)
+{
+    fmat3 res;
+
+    res.col1 = a;
+    res.col2 = b;
+    res.col3 = c;
+
+    return res;
+}
+
+fmat4 setFMat4ByVectors(const fvec4 a, const fvec4 b, const fvec4 c, const fvec4 d)
+{
+    fmat4 res;
+
+    res.col1 = a;
+    res.col2 = b;
+    res.col3 = c;
+    res.col4 = d;
+    
+    return res;
+}
+
 fmat2 mulFMat2(fmat2 a, fmat2 b)
 {
     fmat2 res = {};
