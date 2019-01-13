@@ -279,7 +279,23 @@ UVec4 hadamardUVec4(const UVec4 v, const UVec4 w);
 IVec4 hadamardIVec4(const IVec4 v, const IVec4 w);
 
 float dotProductFVec2(const FVec2 v, const FVec2 w);
-    
+double dotProductDVec2(const DVec2 v, const DVec2 w);
+unsigned dotProductUVec2(const UVec2 v, const UVec2 w);
+int dotProductIVec2(const IVec2 v, const IVec2 w);
+float dotProductFVec3(const FVec3 v, const FVec3 w);
+double dotProductDVec3(const DVec3 v, const DVec3 w);
+unsigned dotProductUVec3(const UVec3 v, const UVec3 w);
+int dotProductIVec3(const IVec3 v, const IVec3 w);
+float dotProductFVec4(const FVec4 v, const FVec4 w);
+double dotProductDVec4(const DVec4 v, const DVec4 w);
+unsigned dotProductUVec4(const UVec4 v, const UVec4 w);
+int dotProductIVec4(const IVec4 v, const IVec4 w);
+
+float lengthFVec2(const FVec2 v);
+double lengthDVec2(const DVec2 v);
+float lengthUVec2(const UVec2 v);
+float lengthIVec2(const IVec2 v);
+
 //NOTE(Stanisz13): MATRICES
 
 float* accessFMat2(fmat2* m, const unsigned x, const unsigned y);

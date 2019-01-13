@@ -695,6 +695,138 @@ IVec4 hadamardIVec4(const IVec4 v, const IVec4 w)
     return res;
 }
 
+float dotProductFVec2(const FVec2 v, const FVec2 w)
+{
+    float res = 0;
+
+    res += v.x * w.x;
+    res += v.y * w.y;
+
+    return res;
+}
+
+double dotProductDVec2(const DVec2 v, const DVec2 w)
+{
+    double res = 0;
+
+    res += v.x * w.x;
+    res += v.y * w.y;
+
+    return res;
+}
+
+unsigned dotProductUVec2(const UVec2 v, const UVec2 w)
+{
+    unsigned res = 0;
+
+    res += v.x * w.x;
+    res += v.y * w.y;
+
+    return res;
+}
+
+int dotProductIVec2(const IVec2 v, const IVec2 w)
+{
+    int res = 0;
+
+    res += v.x * w.x;
+    res += v.y * w.y;
+
+    return res;
+}
+
+float dotProductFVec3(const FVec3 v, const FVec3 w)
+{
+    float res = 0;
+
+    res += v.x * w.x;
+    res += v.y * w.y;
+    res += v.z * w.z;
+    
+    return res;
+}
+
+double dotProductDVec3(const DVec3 v, const DVec3 w)
+{
+    double res = 0;
+
+    res += v.x * w.x;
+    res += v.y * w.y;
+    res += v.z * w.z;
+    
+    return res;
+}
+
+unsigned dotProductUVec3(const UVec3 v, const UVec3 w)
+{
+    unsigned res = 0;
+
+    res += v.x * w.x;
+    res += v.y * w.y;
+    res += v.z * w.z;
+    
+    return res;
+}
+
+int dotProductIVec3(const IVec3 v, const IVec3 w)
+{
+    int res = 0;
+
+    res += v.x * w.x;
+    res += v.y * w.y;
+    res += v.z * w.z;
+    
+    return res;
+}
+
+float dotProductFVec4(const FVec4 v, const FVec4 w)
+{
+    float res = 0;
+
+    res += v.x * w.x;
+    res += v.y * w.y;
+    res += v.z * w.z;
+    res += v.w * w.w;
+    
+    return res;
+}
+
+double dotProductDVec4(const DVec4 v, const DVec4 w)
+{
+    double res = 0;
+
+    res += v.x * w.x;
+    res += v.y * w.y;
+    res += v.z * w.z;
+    res += v.w * w.w;
+    
+    return res;
+}
+
+unsigned dotProductUVec4(const UVec4 v, const UVec4 w)
+{
+    unsigned res = 0;
+
+    res += v.x * w.x;
+    res += v.y * w.y;
+    res += v.z * w.z;
+    res += v.w * w.w;
+    
+    return res;
+}
+
+int dotProductIVec4(const IVec4 v, const IVec4 w)
+{
+    int res = 0;
+
+    res += v.x * w.x;
+    res += v.y * w.y;
+    res += v.z * w.z;
+    res += v.w * w.w;
+    
+    return res;    
+}
+
 float* accessFMat2(fmat2* m, const unsigned x, const unsigned y)
 {
     float* res = 0;
