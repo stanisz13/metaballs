@@ -827,6 +827,126 @@ int dotProductIVec4(const IVec4 v, const IVec4 w)
     return res;    
 }
 
+float lengthSquaredFVec2(const FVec2 v)
+{
+    float res = v.x * v.x
+        + v.y * v.y; 
+    
+    return res;
+}
+
+double lengtSquaredhDVec2(const DVec2 v)
+{
+    double res = v.x * v.x
+        + v.y * v.y; 
+    
+    return res;
+}
+unsigned lengthSquaredUVec2(const UVec2 v)
+{
+    unsigned res = v.x * v.x
+        + v.y * v.y; 
+    
+    return res;
+}
+
+unsigned lengthSquaredIVec2(const IVec2 v)
+{
+    unsigned res = v.x * v.x
+        + v.y * v.y; 
+    
+    return res;
+}
+
+float lengthSquaredFVec3(const FVec3 v)
+{
+    float res = v.x * v.x
+        + v.y * v.y
+        + v.z * v.z;
+
+    return res;
+}
+
+double lengthSquaredDVec3(const DVec3 v)
+{
+    double res = v.x * v.x
+        + v.y * v.y
+        + v.z * v.z;
+
+    return res;
+}
+
+unsigned lengthSquaredUVec3(const UVec3 v)
+{
+    unsigned res = v.x * v.x
+        + v.y * v.y
+        + v.z * v.z;
+
+    return res;
+}
+
+unsigned lengthSquaredIVec3(const IVec3 v)
+{
+    unsigned res = v.x * v.x
+        + v.y * v.y
+        + v.z * v.z;
+
+    return res;
+}
+
+float lengthSquaredFVec4(const FVec4 v)
+{
+    float res = v.x * v.x
+        + v.y * v.y
+        + v.z * v.z
+        + v.w * v.w;
+
+    return res;
+}
+
+double lengthSquaredDVec4(const DVec4 v)
+{
+    double res = v.x * v.x
+        + v.y * v.y
+        + v.z * v.z
+        + v.w * v.w;
+
+    return res;
+}
+
+unsigned lengthSquaredUVec4(const UVec4 v)
+{
+    unsigned res = v.x * v.x
+        + v.y * v.y
+        + v.z * v.z
+        + v.w * v.w;
+
+    return res;
+}
+
+unsigned lengthSquaredIVec4(const IVec4 v)
+{
+    unsigned res = v.x * v.x
+        + v.y * v.y
+        + v.z * v.z
+        + v.w * v.w;
+
+    return res;
+}        
+
+float lengthFVec2(const FVec2 v);
+double lengthDVec2(const DVec2 v);
+float lengthUVec2(const UVec2 v);
+float lengthIVec2(const IVec2 v);
+float lengthFVec3(const FVec3 v);
+double lengthDVec3(const DVec3 v);
+float lengthUVec3(const UVec3 v);
+float lengthIVec3(const IVec3 v);
+float lengthFVec4(const FVec4 v);
+double lengthDVec4(const DVec4 v);
+float lengthUVec4(const UVec4 v);
+float lengthIVec4(const IVec4 v);
+
 float* accessFMat2(fmat2* m, const unsigned x, const unsigned y)
 {
     float* res = 0;

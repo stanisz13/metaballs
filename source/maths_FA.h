@@ -291,10 +291,31 @@ double dotProductDVec4(const DVec4 v, const DVec4 w);
 unsigned dotProductUVec4(const UVec4 v, const UVec4 w);
 int dotProductIVec4(const IVec4 v, const IVec4 w);
 
+float lengthSquaredFVec2(const FVec2 v);
+double lengtSquaredhDVec2(const DVec2 v);
+unsigned lengthSquaredUVec2(const UVec2 v);
+unsigned lengthSquaredIVec2(const IVec2 v);
+float lengthSquaredFVec3(const FVec3 v);
+double lengthSquaredDVec3(const DVec3 v);
+unsigned lengthSquaredUVec3(const UVec3 v);
+unsigned lengthSquaredIVec3(const IVec3 v);
+float lengthSquaredFVec4(const FVec4 v);
+double lengthSquaredDVec4(const DVec4 v);
+unsigned lengthSquaredUVec4(const UVec4 v);
+unsigned lengthSquaredIVec4(const IVec4 v);
+
 float lengthFVec2(const FVec2 v);
 double lengthDVec2(const DVec2 v);
 float lengthUVec2(const UVec2 v);
 float lengthIVec2(const IVec2 v);
+float lengthFVec3(const FVec3 v);
+double lengthDVec3(const DVec3 v);
+float lengthUVec3(const UVec3 v);
+float lengthIVec3(const IVec3 v);
+float lengthFVec4(const FVec4 v);
+double lengthDVec4(const DVec4 v);
+float lengthUVec4(const UVec4 v);
+float lengthIVec4(const IVec4 v);
 
 //NOTE(Stanisz13): MATRICES
 
