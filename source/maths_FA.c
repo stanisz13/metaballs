@@ -5,7 +5,7 @@
 #include <string.h>
 #include <math.h>
 
-float absFloat(const float v)
+float absFloat(float v)
 {
     if (v < 0.0f)
     {
@@ -15,7 +15,7 @@ float absFloat(const float v)
     return v;
 }
 
-int absInt(const int v)
+int absInt(int v)
 {
     if (v < 0)
     {
@@ -25,7 +25,7 @@ int absInt(const int v)
     return v;
 }
 
-double absDouble(const double v)
+double absDouble(double v)
 {
     if (v < 0.0f)
     {
@@ -35,7 +35,7 @@ double absDouble(const double v)
     return v;
 }
 
-float minFloat(const float v, const float w)
+float minFloat(float v, float w)
 {
     if (v - w < EPSILON)
     {
@@ -45,7 +45,7 @@ float minFloat(const float v, const float w)
     return w;
 }
 
-float maxFloat(const float v, const float w)
+float maxFloat(float v, float w)
 {
     if (v - w > EPSILON)
     {
@@ -55,7 +55,7 @@ float maxFloat(const float v, const float w)
     return w;
 }
 
-double minDouble(const double v, const double w)
+double minDouble(double v, double w)
 {
     if (v - w < EPSILON_DOUBLE)
     {
@@ -65,7 +65,7 @@ double minDouble(const double v, const double w)
     return w;
 }
 
-double maxDouble(const double v, const double w)
+double maxDouble(double v, double w)
 {
     if (v - w > EPSILON_DOUBLE)
     {
@@ -75,9 +75,9 @@ double maxDouble(const double v, const double w)
     return w;
 }
 
-double maxDouble(const double v, const double w);
+double maxDouble(double v, double w);
 
-int maxInt(const int v, const int w)
+int maxInt(int v, int w)
 {
     if (v > w)
     {
@@ -87,7 +87,7 @@ int maxInt(const int v, const int w)
     return w;
 }
 
-int minInt(const int v, const int w)
+int minInt(int v, int w)
 {
     if (v < w)
     {
@@ -97,7 +97,7 @@ int minInt(const int v, const int w)
     return w;
 }
 
-unsigned minUnsigned(const unsigned v, const unsigned w)
+unsigned minUnsigned(unsigned v, unsigned w)
 {
     if (v < w)
     {
@@ -107,7 +107,7 @@ unsigned minUnsigned(const unsigned v, const unsigned w)
     return w;
 }
 
-unsigned maxUnsigned(const unsigned v, const unsigned w)
+unsigned maxUnsigned(unsigned v, unsigned w)
 {
     if (v > w)
     {
@@ -130,7 +130,7 @@ unsigned xorshift()
     return x;
 }
 
-void setRandomSeed(const unsigned s)
+void setRandomSeed(unsigned s)
 {
     randomSeries_FA.seed = s;
 }
@@ -162,7 +162,7 @@ double getRandomDoubleZeroOne()
     return res;
 }
 
-unsigned getRandomUnsignedOnInterval(const unsigned a, const unsigned b)
+unsigned getRandomUnsignedOnInterval(unsigned a, unsigned b)
 {
     unsigned res = xorshift();
 
@@ -172,7 +172,7 @@ unsigned getRandomUnsignedOnInterval(const unsigned a, const unsigned b)
     return res;
 }
 
-float getRandomFloatOnInterval(const float a, const float b)
+float getRandomFloatOnInterval(float a, float b)
 {
     float res = getRandomFloatZeroOne();
 
@@ -182,7 +182,7 @@ float getRandomFloatOnInterval(const float a, const float b)
     return res;
 }
 
-double getRandomDoubleOnInterval(const double a, const double b)
+double getRandomDoubleOnInterval(double a, double b)
 {
     double res = getRandomDoubleZeroOne();
 
@@ -192,7 +192,7 @@ double getRandomDoubleOnInterval(const double a, const double b)
     return res;
 }
 
-int getRandomIntOnInterval(const int a, const int b)
+int getRandomIntOnInterval(int a, int b)
 {
     int res = xorshift();
     res = absInt(res);
@@ -203,7 +203,7 @@ int getRandomIntOnInterval(const int a, const int b)
     return res;
 }
 
-FVec2 getRandomFVec2OnInterval(const float a, const float b)
+FVec2 getRandomFVec2OnInterval(float a, float b)
 {
     FVec2 res;
 
@@ -213,7 +213,7 @@ FVec2 getRandomFVec2OnInterval(const float a, const float b)
     return res;
 }
 
-DVec2 getRandomDVec2OnInterval(const double a, const double b)
+DVec2 getRandomDVec2OnInterval(double a, double b)
 {
     DVec2 res;
 
@@ -223,7 +223,7 @@ DVec2 getRandomDVec2OnInterval(const double a, const double b)
     return res;
 }
 
-UVec2 getRandomUVec2OnInterval(const unsigned a, const unsigned b)
+UVec2 getRandomUVec2OnInterval(unsigned a, unsigned b)
 {
     UVec2 res;
 
@@ -233,7 +233,7 @@ UVec2 getRandomUVec2OnInterval(const unsigned a, const unsigned b)
     return res;
 }
 
-IVec2 getRandomIVec2OnInterval(const int a, const int b)
+IVec2 getRandomIVec2OnInterval(int a, int b)
 {
     IVec2 res;
 
@@ -243,7 +243,7 @@ IVec2 getRandomIVec2OnInterval(const int a, const int b)
     return res;
 }
 
-FVec3 getRandomFVec3OnInterval(const float a, const float b)
+FVec3 getRandomFVec3OnInterval(float a, float b)
 {
     FVec3 res;
 
@@ -254,7 +254,7 @@ FVec3 getRandomFVec3OnInterval(const float a, const float b)
     return res;
 }
 
-DVec3 getRandomDVec3OnInterval(const double a, const double b)
+DVec3 getRandomDVec3OnInterval(double a, double b)
 {
     DVec3 res;
 
@@ -265,7 +265,7 @@ DVec3 getRandomDVec3OnInterval(const double a, const double b)
     return res;
 }
 
-UVec3 getRandomUVec3OnInterval(const unsigned a, const unsigned b)
+UVec3 getRandomUVec3OnInterval(unsigned a, unsigned b)
 {
     UVec3 res;
 
@@ -276,7 +276,7 @@ UVec3 getRandomUVec3OnInterval(const unsigned a, const unsigned b)
     return res;
 }
 
-IVec3 getRandomIVec3OnInterval(const int a, const int b)
+IVec3 getRandomIVec3OnInterval(int a, int b)
 {
     IVec3 res;
 
@@ -287,7 +287,7 @@ IVec3 getRandomIVec3OnInterval(const int a, const int b)
     return res;
 }
 
-FVec4 getRandomFVec4OnInterval(const float a, const float b)
+FVec4 getRandomFVec4OnInterval(float a, float b)
 {
     FVec4 res;
 
@@ -299,7 +299,7 @@ FVec4 getRandomFVec4OnInterval(const float a, const float b)
     return res;
 }
 
-DVec4 getRandomDVec4OnInterval(const double a, const double b)
+DVec4 getRandomDVec4OnInterval(double a, double b)
 {
     DVec4 res;
 
@@ -311,7 +311,7 @@ DVec4 getRandomDVec4OnInterval(const double a, const double b)
     return res;
 }
 
-UVec4 getRandomUVec4OnInterval(const unsigned a, const unsigned b)
+UVec4 getRandomUVec4OnInterval(unsigned a, unsigned b)
 {
     UVec4 res;
 
@@ -323,7 +323,7 @@ UVec4 getRandomUVec4OnInterval(const unsigned a, const unsigned b)
     return res;
 }
 
-IVec4 getRandomIVec4OnInterval(const int a, const int b)
+IVec4 getRandomIVec4OnInterval(int a, int b)
 {
     IVec4 res;
 
@@ -335,7 +335,7 @@ IVec4 getRandomIVec4OnInterval(const int a, const int b)
     return res;
 }
 
-FVec2 scaleFVec2(const FVec2 v, const float s)
+FVec2 scaleFVec2(FVec2 v, float s)
 {
     FVec2 res = v;
 
@@ -345,7 +345,7 @@ FVec2 scaleFVec2(const FVec2 v, const float s)
     return res;
 }
 
-DVec2 scaleDVec2(const DVec2 v, const double s)
+DVec2 scaleDVec2(DVec2 v, double s)
 {
     DVec2 res = v;
 
@@ -355,7 +355,7 @@ DVec2 scaleDVec2(const DVec2 v, const double s)
     return res;
 }
 
-UVec2 scaleUVec2(const UVec2 v, const unsigned s)
+UVec2 scaleUVec2(UVec2 v, unsigned s)
 {
     UVec2 res = v;
 
@@ -365,7 +365,7 @@ UVec2 scaleUVec2(const UVec2 v, const unsigned s)
     return res;
 }
 
-IVec2 scaleIVec2(const IVec2 v, const int s)
+IVec2 scaleIVec2(IVec2 v, int s)
 {
     IVec2 res = v;
 
@@ -375,7 +375,7 @@ IVec2 scaleIVec2(const IVec2 v, const int s)
     return res;
 }
 
-FVec3 scaleFVec3(const FVec3 v, const float s)
+FVec3 scaleFVec3(FVec3 v, float s)
 {
     FVec3 res = v;
 
@@ -385,7 +385,7 @@ FVec3 scaleFVec3(const FVec3 v, const float s)
     return res;
 }
 
-DVec3 scaleDVec3(const DVec3 v, const double s)
+DVec3 scaleDVec3(DVec3 v, double s)
 {
     DVec3 res = v;
 
@@ -395,7 +395,7 @@ DVec3 scaleDVec3(const DVec3 v, const double s)
     return res;
 }
 
-UVec3 scaleUVec3(const UVec3 v, const unsigned s)
+UVec3 scaleUVec3(UVec3 v, unsigned s)
 {
     UVec3 res = v;
 
@@ -405,7 +405,7 @@ UVec3 scaleUVec3(const UVec3 v, const unsigned s)
     return res;
 }
 
-IVec3 scaleIVec3(const IVec3 v, const int s)
+IVec3 scaleIVec3(IVec3 v, int s)
 {
     IVec3 res = v;
 
@@ -415,7 +415,7 @@ IVec3 scaleIVec3(const IVec3 v, const int s)
     return res;
 }
 
-FVec4 scaleFVec4(const FVec4 v, const float s)
+FVec4 scaleFVec4(FVec4 v, float s)
 {
     FVec4 res = v;
 
@@ -425,7 +425,7 @@ FVec4 scaleFVec4(const FVec4 v, const float s)
     return res;
 }
 
-DVec4 scaleDVec4(const DVec4 v, const double s)
+DVec4 scaleDVec4(DVec4 v, double s)
 {
     DVec4 res = v;
 
@@ -435,7 +435,7 @@ DVec4 scaleDVec4(const DVec4 v, const double s)
     return res;
 }
 
-UVec4 scaleUVec4(const UVec4 v, const unsigned s)
+UVec4 scaleUVec4(UVec4 v, unsigned s)
 {
     UVec4 res = v;
 
@@ -445,7 +445,7 @@ UVec4 scaleUVec4(const UVec4 v, const unsigned s)
     return res;
 }
 
-IVec4 scaleIVec4(const IVec4 v, const int s)
+IVec4 scaleIVec4(IVec4 v, int s)
 {
     IVec4 res = v;
 
@@ -455,7 +455,7 @@ IVec4 scaleIVec4(const IVec4 v, const int s)
     return res;
 }
 
-FVec2 addFVec2(const FVec2 v, const FVec2 w)
+FVec2 addFVec2(FVec2 v, FVec2 w)
 {
     FVec2 res = v;
     res.x += w.x;
@@ -464,7 +464,7 @@ FVec2 addFVec2(const FVec2 v, const FVec2 w)
     return res;
 }
 
-DVec2 addDVec2(const DVec2 v, const DVec2 w)
+DVec2 addDVec2(DVec2 v, DVec2 w)
 {
     DVec2 res = v;
     res.x += w.x;
@@ -473,7 +473,7 @@ DVec2 addDVec2(const DVec2 v, const DVec2 w)
     return res;
 }
 
-UVec2 addUVec2(const UVec2 v, const UVec2 w)
+UVec2 addUVec2(UVec2 v, UVec2 w)
 {
     UVec2 res = v;
     res.x += w.x;
@@ -482,7 +482,7 @@ UVec2 addUVec2(const UVec2 v, const UVec2 w)
     return res;
 }
 
-IVec2 addIVec2(const IVec2 v, const IVec2 w)
+IVec2 addIVec2(IVec2 v, IVec2 w)
 {
     IVec2 res = v;
     res.x += w.x;
@@ -491,7 +491,7 @@ IVec2 addIVec2(const IVec2 v, const IVec2 w)
     return res;
 }
 
-FVec3 addFVec3(const FVec3 v, const FVec3 w)
+FVec3 addFVec3(FVec3 v, FVec3 w)
 {
     FVec3 res = v;
     res.x += w.x;
@@ -500,7 +500,7 @@ FVec3 addFVec3(const FVec3 v, const FVec3 w)
     
     return res;
 }
-DVec3 addDVec3(const DVec3 v, const DVec3 w)
+DVec3 addDVec3(DVec3 v, DVec3 w)
 {
     DVec3 res = v;
     res.x += w.x;
@@ -510,7 +510,7 @@ DVec3 addDVec3(const DVec3 v, const DVec3 w)
     return res;
 }
 
-UVec3 addUVec3(const UVec3 v, const UVec3 w)
+UVec3 addUVec3(UVec3 v, UVec3 w)
 {
     UVec3 res = v;
     res.x += w.x;
@@ -520,7 +520,7 @@ UVec3 addUVec3(const UVec3 v, const UVec3 w)
     return res;
 }
 
-IVec3 addIVec3(const IVec3 v, const IVec3 w)
+IVec3 addIVec3(IVec3 v, IVec3 w)
 {
     IVec3 res = v;
     res.x += w.x;
@@ -530,7 +530,7 @@ IVec3 addIVec3(const IVec3 v, const IVec3 w)
     return res;
 }
 
-FVec4 addFVec4(const FVec4 v, const FVec4 w)
+FVec4 addFVec4(FVec4 v, FVec4 w)
 {
     FVec4 res = v;
     res.x += w.x;
@@ -541,7 +541,7 @@ FVec4 addFVec4(const FVec4 v, const FVec4 w)
     return res;
 }
 
-DVec4 addDVec4(const DVec4 v, const DVec4 w)
+DVec4 addDVec4(DVec4 v, DVec4 w)
 {
     DVec4 res = v;
     res.x += w.x;
@@ -553,7 +553,7 @@ DVec4 addDVec4(const DVec4 v, const DVec4 w)
 
 }
 
-UVec4 addUVec4(const UVec4 v, const UVec4 w)
+UVec4 addUVec4(UVec4 v, UVec4 w)
 {
     UVec4 res = v;
     res.x += w.x;
@@ -565,7 +565,7 @@ UVec4 addUVec4(const UVec4 v, const UVec4 w)
 
 }
 
-IVec4 addIVec4(const IVec4 v, const IVec4 w)
+IVec4 addIVec4(IVec4 v, IVec4 w)
 {
     IVec4 res = v;
     res.x += w.x;
@@ -576,7 +576,7 @@ IVec4 addIVec4(const IVec4 v, const IVec4 w)
     return res;
 }
 
-FVec2 hadamardFVec2(const FVec2 v, const FVec2 w)
+FVec2 hadamardFVec2(FVec2 v, FVec2 w)
 {
     FVec2 res = v;
     res.x *= w.x;
@@ -585,7 +585,7 @@ FVec2 hadamardFVec2(const FVec2 v, const FVec2 w)
     return res;
 }
 
-DVec2 hadamardDVec2(const DVec2 v, const DVec2 w)
+DVec2 hadamardDVec2(DVec2 v, DVec2 w)
 {
     DVec2 res = v;
     res.x *= w.x;
@@ -594,7 +594,7 @@ DVec2 hadamardDVec2(const DVec2 v, const DVec2 w)
     return res;
 }
 
-UVec2 hadamardUVec2(const UVec2 v, const UVec2 w)
+UVec2 hadamardUVec2(UVec2 v, UVec2 w)
 {
     UVec2 res = v;
     res.x *= w.x;
@@ -603,7 +603,7 @@ UVec2 hadamardUVec2(const UVec2 v, const UVec2 w)
     return res;
 }
 
-IVec2 hadamardIVec2(const IVec2 v, const IVec2 w)
+IVec2 hadamardIVec2(IVec2 v, IVec2 w)
 {
     IVec2 res = v;
     res.x *= w.x;
@@ -612,7 +612,7 @@ IVec2 hadamardIVec2(const IVec2 v, const IVec2 w)
     return res;
 }
 
-FVec3 hadamardFVec3(const FVec3 v, const FVec3 w)
+FVec3 hadamardFVec3(FVec3 v, FVec3 w)
 {
     FVec3 res = v;
     res.x *= w.x;
@@ -622,7 +622,7 @@ FVec3 hadamardFVec3(const FVec3 v, const FVec3 w)
     return res;
 }
 
-DVec3 hadamardDVec3(const DVec3 v, const DVec3 w)
+DVec3 hadamardDVec3(DVec3 v, DVec3 w)
 {
     DVec3 res = v;
     res.x *= w.x;
@@ -632,7 +632,7 @@ DVec3 hadamardDVec3(const DVec3 v, const DVec3 w)
     return res;
 }
 
-UVec3 hadamardUVec3(const UVec3 v, const UVec3 w)
+UVec3 hadamardUVec3(UVec3 v, UVec3 w)
 {
     UVec3 res = v;
     res.x *= w.x;
@@ -642,7 +642,7 @@ UVec3 hadamardUVec3(const UVec3 v, const UVec3 w)
     return res;
 }
 
-IVec3 hadamardIVec3(const IVec3 v, const IVec3 w)
+IVec3 hadamardIVec3(IVec3 v, IVec3 w)
 {
     IVec3 res = v;
     res.x *= w.x;
@@ -652,7 +652,7 @@ IVec3 hadamardIVec3(const IVec3 v, const IVec3 w)
     return res;
 }
 
-FVec4 hadamardFVec4(const FVec4 v, const FVec4 w)
+FVec4 hadamardFVec4(FVec4 v, FVec4 w)
 {
     FVec4 res = v;
     res.x *= w.x;
@@ -663,7 +663,7 @@ FVec4 hadamardFVec4(const FVec4 v, const FVec4 w)
     return res;
 }
 
-DVec4 hadamardDVec4(const DVec4 v, const DVec4 w)
+DVec4 hadamardDVec4(DVec4 v, DVec4 w)
 {
     DVec4 res = v;
     res.x *= w.x;
@@ -674,7 +674,7 @@ DVec4 hadamardDVec4(const DVec4 v, const DVec4 w)
     return res;
 }
 
-UVec4 hadamardUVec4(const UVec4 v, const UVec4 w)
+UVec4 hadamardUVec4(UVec4 v, UVec4 w)
 {
     UVec4 res = v;
     res.x *= w.x;
@@ -685,7 +685,7 @@ UVec4 hadamardUVec4(const UVec4 v, const UVec4 w)
     return res;
 }
 
-IVec4 hadamardIVec4(const IVec4 v, const IVec4 w)
+IVec4 hadamardIVec4(IVec4 v, IVec4 w)
 {
     IVec4 res = v;
     res.x *= w.x;
@@ -696,7 +696,7 @@ IVec4 hadamardIVec4(const IVec4 v, const IVec4 w)
     return res;
 }
 
-float dotProductFVec2(const FVec2 v, const FVec2 w)
+float dotProductFVec2(FVec2 v, FVec2 w)
 {
     float res = 0;
 
@@ -706,7 +706,7 @@ float dotProductFVec2(const FVec2 v, const FVec2 w)
     return res;
 }
 
-double dotProductDVec2(const DVec2 v, const DVec2 w)
+double dotProductDVec2(DVec2 v, DVec2 w)
 {
     double res = 0;
 
@@ -716,7 +716,7 @@ double dotProductDVec2(const DVec2 v, const DVec2 w)
     return res;
 }
 
-unsigned dotProductUVec2(const UVec2 v, const UVec2 w)
+unsigned dotProductUVec2(UVec2 v, UVec2 w)
 {
     unsigned res = 0;
 
@@ -726,7 +726,7 @@ unsigned dotProductUVec2(const UVec2 v, const UVec2 w)
     return res;
 }
 
-int dotProductIVec2(const IVec2 v, const IVec2 w)
+int dotProductIVec2(IVec2 v, IVec2 w)
 {
     int res = 0;
 
@@ -736,7 +736,7 @@ int dotProductIVec2(const IVec2 v, const IVec2 w)
     return res;
 }
 
-float dotProductFVec3(const FVec3 v, const FVec3 w)
+float dotProductFVec3(FVec3 v, FVec3 w)
 {
     float res = 0;
 
@@ -747,7 +747,7 @@ float dotProductFVec3(const FVec3 v, const FVec3 w)
     return res;
 }
 
-double dotProductDVec3(const DVec3 v, const DVec3 w)
+double dotProductDVec3(DVec3 v, DVec3 w)
 {
     double res = 0;
 
@@ -758,7 +758,7 @@ double dotProductDVec3(const DVec3 v, const DVec3 w)
     return res;
 }
 
-unsigned dotProductUVec3(const UVec3 v, const UVec3 w)
+unsigned dotProductUVec3(UVec3 v, UVec3 w)
 {
     unsigned res = 0;
 
@@ -769,7 +769,7 @@ unsigned dotProductUVec3(const UVec3 v, const UVec3 w)
     return res;
 }
 
-int dotProductIVec3(const IVec3 v, const IVec3 w)
+int dotProductIVec3(IVec3 v, IVec3 w)
 {
     int res = 0;
 
@@ -780,7 +780,7 @@ int dotProductIVec3(const IVec3 v, const IVec3 w)
     return res;
 }
 
-float dotProductFVec4(const FVec4 v, const FVec4 w)
+float dotProductFVec4(FVec4 v, FVec4 w)
 {
     float res = 0;
 
@@ -792,7 +792,7 @@ float dotProductFVec4(const FVec4 v, const FVec4 w)
     return res;
 }
 
-double dotProductDVec4(const DVec4 v, const DVec4 w)
+double dotProductDVec4(DVec4 v, DVec4 w)
 {
     double res = 0;
 
@@ -804,7 +804,7 @@ double dotProductDVec4(const DVec4 v, const DVec4 w)
     return res;
 }
 
-unsigned dotProductUVec4(const UVec4 v, const UVec4 w)
+unsigned dotProductUVec4(UVec4 v, UVec4 w)
 {
     unsigned res = 0;
 
@@ -816,7 +816,7 @@ unsigned dotProductUVec4(const UVec4 v, const UVec4 w)
     return res;
 }
 
-int dotProductIVec4(const IVec4 v, const IVec4 w)
+int dotProductIVec4(IVec4 v, IVec4 w)
 {
     int res = 0;
 
@@ -828,7 +828,7 @@ int dotProductIVec4(const IVec4 v, const IVec4 w)
     return res;    
 }
 
-float lengthSquaredFVec2(const FVec2 v)
+float lengthSquaredFVec2(FVec2 v)
 {
     float res = v.x * v.x
         + v.y * v.y; 
@@ -836,14 +836,14 @@ float lengthSquaredFVec2(const FVec2 v)
     return res;
 }
 
-double lengthSquaredDVec2(const DVec2 v)
+double lengthSquaredDVec2(DVec2 v)
 {
     double res = v.x * v.x
         + v.y * v.y; 
     
     return res;
 }
-unsigned lengthSquaredUVec2(const UVec2 v)
+unsigned lengthSquaredUVec2(UVec2 v)
 {
     unsigned res = v.x * v.x
         + v.y * v.y; 
@@ -851,7 +851,7 @@ unsigned lengthSquaredUVec2(const UVec2 v)
     return res;
 }
 
-unsigned lengthSquaredIVec2(const IVec2 v)
+unsigned lengthSquaredIVec2(IVec2 v)
 {
     unsigned res = v.x * v.x
         + v.y * v.y; 
@@ -859,7 +859,7 @@ unsigned lengthSquaredIVec2(const IVec2 v)
     return res;
 }
 
-float lengthSquaredFVec3(const FVec3 v)
+float lengthSquaredFVec3(FVec3 v)
 {
     float res = v.x * v.x
         + v.y * v.y
@@ -868,7 +868,7 @@ float lengthSquaredFVec3(const FVec3 v)
     return res;
 }
 
-double lengthSquaredDVec3(const DVec3 v)
+double lengthSquaredDVec3(DVec3 v)
 {
     double res = v.x * v.x
         + v.y * v.y
@@ -877,7 +877,7 @@ double lengthSquaredDVec3(const DVec3 v)
     return res;
 }
 
-unsigned lengthSquaredUVec3(const UVec3 v)
+unsigned lengthSquaredUVec3(UVec3 v)
 {
     unsigned res = v.x * v.x
         + v.y * v.y
@@ -886,7 +886,7 @@ unsigned lengthSquaredUVec3(const UVec3 v)
     return res;
 }
 
-unsigned lengthSquaredIVec3(const IVec3 v)
+unsigned lengthSquaredIVec3(IVec3 v)
 {
     unsigned res = v.x * v.x
         + v.y * v.y
@@ -895,7 +895,7 @@ unsigned lengthSquaredIVec3(const IVec3 v)
     return res;
 }
 
-float lengthSquaredFVec4(const FVec4 v)
+float lengthSquaredFVec4(FVec4 v)
 {
     float res = v.x * v.x
         + v.y * v.y
@@ -905,7 +905,7 @@ float lengthSquaredFVec4(const FVec4 v)
     return res;
 }
 
-double lengthSquaredDVec4(const DVec4 v)
+double lengthSquaredDVec4(DVec4 v)
 {
     double res = v.x * v.x
         + v.y * v.y
@@ -915,7 +915,7 @@ double lengthSquaredDVec4(const DVec4 v)
     return res;
 }
 
-unsigned lengthSquaredUVec4(const UVec4 v)
+unsigned lengthSquaredUVec4(UVec4 v)
 {
     unsigned res = v.x * v.x
         + v.y * v.y
@@ -925,7 +925,7 @@ unsigned lengthSquaredUVec4(const UVec4 v)
     return res;
 }
 
-unsigned lengthSquaredIVec4(const IVec4 v)
+unsigned lengthSquaredIVec4(IVec4 v)
 {
     unsigned res = v.x * v.x
         + v.y * v.y
@@ -935,91 +935,122 @@ unsigned lengthSquaredIVec4(const IVec4 v)
     return res;
 }        
 
-float lengthFVec2(const FVec2 v)
+float lengthFVec2(FVec2 v)
 {
     float res = sqrt((float)lengthSquaredFVec2(v));
 
     return res;
 }
 
-double lengthDVec2(const DVec2 v)
+double lengthDVec2(DVec2 v)
 {
     double res = sqrt((double)lengthSquaredDVec2(v));
 
     return res;
 }
 
-float lengthUVec2(const UVec2 v)
+float lengthUVec2(UVec2 v)
 {
     float res = sqrt((float)lengthSquaredUVec2(v));
 
     return res;
 }
 
-float lengthIVec2(const IVec2 v)
+float lengthIVec2(IVec2 v)
 {
     float res = sqrt((float)lengthSquaredIVec2(v));
 
     return res;
 }
 
-float lengthFVec3(const FVec3 v)
+float lengthFVec3(FVec3 v)
 {
     float res = sqrt((float)lengthSquaredFVec3(v));
 
     return res;
 }    
 
-double lengthDVec3(const DVec3 v)
+double lengthDVec3(DVec3 v)
 {
     double res = sqrt((double)lengthSquaredDVec3(v));
 
     return res;
 }
 
-float lengthUVec3(const UVec3 v)
+float lengthUVec3(UVec3 v)
 {
     float res = sqrt((float)lengthSquaredUVec3(v));
 
     return res;
 }
 
-float lengthIVec3(const IVec3 v)
+float lengthIVec3(IVec3 v)
 {
     float res = sqrt((float)lengthSquaredIVec3(v));
 
     return res;
 }
 
-float lengthFVec4(const FVec4 v)
+float lengthFVec4(FVec4 v)
 {
     float res = sqrt((float)lengthSquaredFVec4(v));
 
     return res;
 }
 
-double lengthDVec4(const DVec4 v)
+double lengthDVec4(DVec4 v)
 {
     double res = sqrt((double)lengthSquaredDVec4(v));
 
     return res;
 }
 
-float lengthUVec4(const UVec4 v)
+float lengthUVec4(UVec4 v)
 {
     float res = sqrt((float)lengthSquaredUVec4(v));
 
     return res;
 }
 
-float lengthIVec4(const IVec4 v)
+float lengthIVec4(IVec4 v)
 {
     float res = sqrt((float)lengthSquaredIVec4(v));
 
     return res;
 }
 
-float* accessFMat2(FMat2* m, const unsigned x, const unsigned y)
+FMat2 addFMat2(FMat2 a, FMat2 b)
+{
+    FMat2 res = a;
+
+    for (unsigned i = 0; i < 2; ++i)
+    {
+        for (unsigned j = 0; j < 2; ++j)
+        {
+            float* resAcc = accessFMat2(&res, i, j);
+            float* bAcc = accessFMat2(&b, i, j);
+            
+            *resAcc += *bAcc;
+        }
+    }
+
+    return res;
+}
+
+FMat3 addFMat3(FMat3 a, FMat3 b)
+{
+    FMat3 res = a;
+
+    return res;
+}
+
+FMat4 addFMat4(FMat4 a, FMat4 b);
+
+FMat2 scaleFMat2(FMat2 a, float b);
+FMat3 scaleFMat3(FMat3 a, float b);
+FMat4 scaleFMat4(FMat4 a, float b);
+
+float* accessFMat2(FMat2* m, unsigned x, unsigned y)
 {
     float* res = 0;
 
@@ -1028,7 +1059,7 @@ float* accessFMat2(FMat2* m, const unsigned x, const unsigned y)
     return res;
 }
 
-float* accessFMat3(FMat3* m, const unsigned x, const unsigned y)
+float* accessFMat3(FMat3* m, unsigned x, unsigned y)
 {
     float* res = 0;
 
@@ -1037,7 +1068,7 @@ float* accessFMat3(FMat3* m, const unsigned x, const unsigned y)
     return res;
 }
 
-float* accessFMat4(FMat4* m, const unsigned x, const unsigned y)
+float* accessFMat4(FMat4* m, unsigned x, unsigned y)
 {
     float* res= 0;
 
@@ -1073,7 +1104,7 @@ FMat4 setFMat4ByElements(const float* data)
     return res;
 }
 
-FMat2 setFMat2ByVectors(const FVec2 a, const FVec2 b)
+FMat2 setFMat2ByVectors(FVec2 a, FVec2 b)
 {
     FMat2 res;
 
@@ -1083,7 +1114,7 @@ FMat2 setFMat2ByVectors(const FVec2 a, const FVec2 b)
     return res;
 }
 
-FMat3 setFMat3ByVectors(const FVec3 a, const FVec3 b, const FVec3 c)
+FMat3 setFMat3ByVectors(FVec3 a, FVec3 b, FVec3 c)
 {
     FMat3 res;
 
@@ -1094,7 +1125,7 @@ FMat3 setFMat3ByVectors(const FVec3 a, const FVec3 b, const FVec3 c)
     return res;
 }
 
-FMat4 setFMat4ByVectors(const FVec4 a, const FVec4 b, const FVec4 c, const FVec4 d)
+FMat4 setFMat4ByVectors(FVec4 a, FVec4 b, FVec4 c, FVec4 d)
 {
     FMat4 res;
 
