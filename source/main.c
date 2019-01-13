@@ -21,7 +21,7 @@ void generateBalls()
     
     for (unsigned i = 0; i < ballsNum; ++i)
     {
-        velocity[i] = scaleFVec2ByConstant(getRandomFVec2OnInterval(-1.0f, 1.0f), 0.0004f);
+        velocity[i] = scaleFVec2(getRandomFVec2OnInterval(-1.0f, 1.0f), 0.0004f);
         accels[i].y = getRandomFloatOnInterval(-0.00001f, -0.000001f);
         ballsPos[i] = getRandomFVec2OnInterval(-1.0f, 1.0f);
         radii[i] = r;

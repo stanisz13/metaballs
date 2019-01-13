@@ -335,7 +335,7 @@ IVec4 getRandomIVec4OnInterval(const int a, const int b)
     return res;
 }
 
-FVec2 scaleFVec2ByConstant(const FVec2 v, const float s)
+FVec2 scaleFVec2(const FVec2 v, const float s)
 {
     FVec2 res = v;
 
@@ -345,7 +345,7 @@ FVec2 scaleFVec2ByConstant(const FVec2 v, const float s)
     return res;
 }
 
-DVec2 scaleDVec2ByConstant(const DVec2 v, const double s)
+DVec2 scaleDVec2(const DVec2 v, const double s)
 {
     DVec2 res = v;
 
@@ -355,7 +355,7 @@ DVec2 scaleDVec2ByConstant(const DVec2 v, const double s)
     return res;
 }
 
-UVec2 scaleUVec2ByConstant(const UVec2 v, const unsigned s)
+UVec2 scaleUVec2(const UVec2 v, const unsigned s)
 {
     UVec2 res = v;
 
@@ -365,7 +365,7 @@ UVec2 scaleUVec2ByConstant(const UVec2 v, const unsigned s)
     return res;
 }
 
-IVec2 scaleIVec2ByConstant(const IVec2 v, const int s)
+IVec2 scaleIVec2(const IVec2 v, const int s)
 {
     IVec2 res = v;
 
@@ -375,7 +375,7 @@ IVec2 scaleIVec2ByConstant(const IVec2 v, const int s)
     return res;
 }
 
-FVec3 scaleFVec3ByConstant(const FVec3 v, const float s)
+FVec3 scaleFVec3(const FVec3 v, const float s)
 {
     FVec3 res = v;
 
@@ -385,7 +385,7 @@ FVec3 scaleFVec3ByConstant(const FVec3 v, const float s)
     return res;
 }
 
-DVec3 scaleDVec3ByConstant(const DVec3 v, const double s)
+DVec3 scaleDVec3(const DVec3 v, const double s)
 {
     DVec3 res = v;
 
@@ -395,7 +395,7 @@ DVec3 scaleDVec3ByConstant(const DVec3 v, const double s)
     return res;
 }
 
-UVec3 scaleUVec3ByConstant(const UVec3 v, const unsigned s)
+UVec3 scaleUVec3(const UVec3 v, const unsigned s)
 {
     UVec3 res = v;
 
@@ -405,7 +405,7 @@ UVec3 scaleUVec3ByConstant(const UVec3 v, const unsigned s)
     return res;
 }
 
-IVec3 scaleIVec3ByConstant(const IVec3 v, const int s)
+IVec3 scaleIVec3(const IVec3 v, const int s)
 {
     IVec3 res = v;
 
@@ -415,7 +415,7 @@ IVec3 scaleIVec3ByConstant(const IVec3 v, const int s)
     return res;
 }
 
-FVec4 scaleFVec4ByConstant(const FVec4 v, const float s)
+FVec4 scaleFVec4(const FVec4 v, const float s)
 {
     FVec4 res = v;
 
@@ -425,7 +425,7 @@ FVec4 scaleFVec4ByConstant(const FVec4 v, const float s)
     return res;
 }
 
-DVec4 scaleDVec4ByConstant(const DVec4 v, const double s)
+DVec4 scaleDVec4(const DVec4 v, const double s)
 {
     DVec4 res = v;
 
@@ -435,7 +435,7 @@ DVec4 scaleDVec4ByConstant(const DVec4 v, const double s)
     return res;
 }
 
-UVec4 scaleUVec4ByConstant(const UVec4 v, const unsigned s)
+UVec4 scaleUVec4(const UVec4 v, const unsigned s)
 {
     UVec4 res = v;
 
@@ -445,7 +445,7 @@ UVec4 scaleUVec4ByConstant(const UVec4 v, const unsigned s)
     return res;
 }
 
-IVec4 scaleIVec4ByConstant(const IVec4 v, const int s)
+IVec4 scaleIVec4(const IVec4 v, const int s)
 {
     IVec4 res = v;
 

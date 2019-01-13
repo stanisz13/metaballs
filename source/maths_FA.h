@@ -239,18 +239,18 @@ UVec4 getRandomUVec4OnInterval(const unsigned a, const unsigned b);
 IVec4 getRandomIVec4OnInterval(const int a, const int b);
 
 //NOTE(Stanisz13): VECTORS
-FVec2 scaleFVec2ByConstant(const FVec2 v, const float s);
-DVec2 scaleDVec2ByConstant(const DVec2 v, const double s);
-UVec2 scaleUVec2ByConstant(const UVec2 v, const unsigned s);
-IVec2 scaleIVec2ByConstant(const IVec2 v, const int s);
-FVec3 scaleFVec3ByConstant(const FVec3 v, const float s);
-DVec3 scaleDVec3ByConstant(const DVec3 v, const double s);
-UVec3 scaleUVec3ByConstant(const UVec3 v, const unsigned s);
-IVec3 scaleIVec3ByConstant(const IVec3 v, const int s);
-FVec4 scaleFVec4ByConstant(const FVec4 v, const float s);
-DVec4 scaleDVec4ByConstant(const DVec4 v, const double s);
-UVec4 scaleUVec4ByConstant(const UVec4 v, const unsigned s);
-IVec4 scaleIVec4ByConstant(const IVec4 v, const int s);
+FVec2 scaleFVec2(const FVec2 v, const float s);
+DVec2 scaleDVec2(const DVec2 v, const double s);
+UVec2 scaleUVec2(const UVec2 v, const unsigned s);
+IVec2 scaleIVec2(const IVec2 v, const int s);
+FVec3 scaleFVec3(const FVec3 v, const float s);
+DVec3 scaleDVec3(const DVec3 v, const double s);
+UVec3 scaleUVec3(const UVec3 v, const unsigned s);
+IVec3 scaleIVec3(const IVec3 v, const int s);
+FVec4 scaleFVec4(const FVec4 v, const float s);
+DVec4 scaleDVec4(const DVec4 v, const double s);
+UVec4 scaleUVec4(const UVec4 v, const unsigned s);
+IVec4 scaleIVec4(const IVec4 v, const int s);
 
 FVec2 addFVec2(const FVec2 v, const FVec2 w);
 DVec2 addDVec2(const DVec2 v, const DVec2 w);
@@ -331,7 +331,13 @@ FMat2 setFMat2ByVectors(const FVec2 a, const FVec2 b);
 FMat3 setFMat3ByVectors(const FVec3 a, const FVec3 b, const FVec3 c);
 FMat4 setFMat4ByVectors(const FVec4 a, const FVec4 b, const FVec4 c, const FVec4 d);
 
-FMat2 addFMat2();
+FMat2 addFMat2(const FMat2 a, const FMat2 b);
+FMat2 addFMat3(const FMat3 a, const FMat3 b);
+FMat2 addFMat4(const FMat4 a, const FMat4 b);
+
+FMat2 scaleFMat2(const FMat2 a, const float b);
+FMat2 scaleFMat3(const FMat3 a, const float b);
+FMat2 scaleFMat4(const FMat4 a, const float b);
 
 FMat2 mulFMat2(const FMat2 a, const FMat2 b);
 FMat3 mulFMat3(const FMat3 a, const FMat3 b);
