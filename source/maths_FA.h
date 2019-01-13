@@ -331,6 +331,10 @@ FMat2 setFMat2ByVectors(FVec2 a, FVec2 b);
 FMat3 setFMat3ByVectors(FVec3 a, FVec3 b, FVec3 c);
 FMat4 setFMat4ByVectors(FVec4 a, FVec4 b, FVec4 c, FVec4 d);
 
+FMat2 identityFMat2();
+FMat3 identityFMat3();
+FMat4 identityFMat4();
+
 FMat2 addFMat2(FMat2 a, FMat2 b);
 FMat3 addFMat3(FMat3 a, FMat3 b);
 FMat4 addFMat4(FMat4 a, FMat4 b);

@@ -1124,6 +1124,45 @@ FMat4 scaleFMat4(FMat4 a, float b)
     return res;    
 }
 
+FMat2 identityFMat2()
+{
+    FMat2 res = {};
+
+    for (unsigned i = 0; i < 2; ++i)
+    {
+        float* resAcc = accessFMat2(&res, i, i);
+        *resAcc = 1.0f;
+    }
+    
+    return res;
+}
+
+FMat3 identityFMat3()
+{
+    FMat3 res = {};
+
+    for (unsigned i = 0; i < 3; ++i)
+    {
+        float* resAcc = accessFMat3(&res, i, i);
+        *resAcc = 1.0f;
+    }
+    
+    return res;
+}
+
+FMat4 identityFMat4()
+{
+    FMat4 res = {};
+
+    for (unsigned i = 0; i < 4; ++i)
+    {
+        float* resAcc = accessFMat4(&res, i, i);
+        *resAcc = 1.0f;
+    }
+    
+    return res;
+}
+
 float* accessFMat2(FMat2* m, unsigned x, unsigned y)
 {
     float* res = 0;
