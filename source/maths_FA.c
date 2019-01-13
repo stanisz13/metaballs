@@ -2,6 +2,7 @@
 #include <limits.h>
 #include <float.h>
 #include <time.h>
+#include <string.h>
 
 float absFloat(const float v)
 {
@@ -694,44 +695,121 @@ ivec4 hadamardIVec4(const ivec4 v, const ivec4 w)
     return res;
 }
 
-fmat2x2 mulFMat2x2by2x2(const fmat2x2 a, const fmat2x2 b)
+float* accessFMat2(fmat2* m, const unsigned x, const unsigned y)
 {
-    fmat2x2 res = {};
+    float* res = 0;
+
+    res = m->mem + x * 2 + y;
     
     return res;
 }
 
-fmat2x2 mulFMat2x3by3x2(const fmat2x3 a, const fmat3x2 b);
-fmat2x2 mulFMat2x4by4x2(const fmat2x4 a, const fmat4x2 b);
+float* accessFMat3(fmat3* m, const unsigned x, const unsigned y)
+{
+    float* res = 0;
 
-fmat2x3 mulFMat2x2by2x3(const fmat2x2 a, const fmat2x3 b);
-fmat2x3 mulFMat2x3by3x3(const fmat2x3 a, const fmat3x3 b);
-fmat2x3 mulFMat2x4by4x3(const fmat2x4 a, const fmat4x3 b);
+    res = m->mem + x * 3 + y;
 
-fmat2x4 mulFMat2x2by2x4(const fmat2x2 a, const fmat2x4 b);
-fmat2x4 mulFMat2x3by3x4(const fmat2x3 a, const fmat3x4 b);
-fmat2x4 mulFMat2x4by4x4(const fmat2x4 a, const fmat4x4 b);
+    return res;
+}
 
-fmat3x2 mulFMat3x2by2x2(const fmat3x2 a, const fmat2x2 b);
-fmat3x2 mulFMat3x3by3x2(const fmat3x3 a, const fmat3x2 b);
-fmat3x2 mulFMat3x4by4x2(const fmat3x4 a, const fmat4x2 b);
+float* accessFMat4(fmat4* m, const unsigned x, const unsigned y)
+{
+    float* res= 0;
 
-fmat4x2 mulFMat4x2by2x2(const fmat4x2 a, const fmat2x2 b);
-fmat4x2 mulFMat4x3by3x2(const fmat4x3 a, const fmat3x2 b);
-fmat4x2 mulFMat4x4by4x2(const fmat4x4 a, const fmat4x2 b);
+    res = m->mem + x * 4 + y;
 
-fmat3x3 mulFMat3x2by2x3(const fmat3x2 a, const fmat2x3 b);
-fmat3x3 mulFMat3x3by3x3(const fmat3x3 a, const fmat3x3 b);
-fmat3x3 mulFMat3x4by4x3(const fmat3x4 a, const fmat4x3 b);
+    return res;
+}
 
-fmat3x4 mulFMat3x2by2x4(const fmat3x2 a, const fmat2x4 b);
-fmat3x4 mulFMat3x3by3x4(const fmat3x3 a, const fmat3x4 b);
-fmat3x4 mulFMat3x4by4x4(const fmat3x4 a, const fmat4x4 b);
+fmat2 setFMat2ByElements(const float* data)
+{
+    fmat2 res;
 
-fmat4x3 mulFMat4x2by2x3(const fmat4x2 a, const fmat2x3 b);
-fmat4x3 mulFMat4x3by3x3(const fmat4x3 a, const fmat3x3 b);
-fmat4x3 mulFMat4x4by4x3(const fmat4x4 a, const fmat4x3 b);
+    memcpy(res.mem, data, sizeof(res.mem));
+    
+    return res;
+}
 
-fmat4x4 mulFMat4x2by2x4(const fmat4x2 a, const fmat2x4 b);
-fmat4x4 mulFMat4x3by3x4(const fmat4x3 a, const fmat3x4 b);
-fmat4x4 mulFMat4x4by4x4(const fmat4x4 a, const fmat4x4 b);
+fmat3 setFMat3ByElements(const float* data)
+{
+    fmat3 res;
+
+    memcpy(res.mem, data, sizeof(res.mem));
+    
+    return res;
+}
+
+fmat4 setFMat4ByElements(const float* data)
+{
+    fmat4 res;
+
+    memcpy(res.mem, data, sizeof(res.mem));
+    
+    return res;
+}
+
+fmat2 mulFMat2(fmat2 a, fmat2 b)
+{
+    fmat2 res = {};
+
+    for (unsigned i = 0; i < 2; ++i)
+    {
+        for (unsigned j = 0; j < 2; ++j)
+        {
+            float* curResElem = accessFMat2(&res, i, j);
+            for (unsigned k = 0; k < 2; ++k)
+            {
+                float* curAElem = accessFMat2(&a, k, j);
+                float* curBElem = accessFMat2(&b, i, k);
+                *curResElem += *curAElem * *curBElem;
+            }
+        }
+    }
+    return res;
+}
+
+fmat3 mulFMat3(fmat3 a, fmat3 b)
+{
+    fmat3 res = {};
+
+    for (unsigned i = 0; i < 3; ++i)
+    {
+        for (unsigned j = 0; j < 3; ++j)
+        {
+            float* curResElem = accessFMat3(&res, i, j);
+
+            for (unsigned k = 0; k < 3; ++k)
+            {
+                float* curAElem = accessFMat3(&a, k, j);
+                float* curBElem = accessFMat3(&b, i, k);
+                
+                *curResElem += *curAElem * *curBElem;
+            }
+        }
+    }
+    return res;
+}
+
+fmat4 mulFMat4(fmat4 a, fmat4 b)
+{
+    fmat4 res = {};
+
+    for (unsigned i = 0; i < 4; ++i)
+    {
+        for (unsigned j = 0; j < 4; ++j)
+        {
+            float* curResElem = accessFMat4(&res, i, j);
+
+            for (unsigned k = 0; k < 4; ++k)
+            {
+                float* curAElem = accessFMat4(&a, k, j);
+                float* curBElem = accessFMat4(&b, i, k);
+                
+                *curResElem += *curAElem * *curBElem;
+            }
+        }
+    }
+    return res;
+}
+

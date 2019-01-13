@@ -5,7 +5,7 @@
 
 int isRunning = 1;
 
-#define MAX_BALLS_NUM 50
+#define MAX_BALLS_NUM 10
 
 fvec2 ballsPos[MAX_BALLS_NUM];
 fvec2 velocity[MAX_BALLS_NUM];
@@ -13,7 +13,7 @@ float radii[MAX_BALLS_NUM];
 fvec3 colors[MAX_BALLS_NUM];
 fvec2 accels[MAX_BALLS_NUM];
 
-int ballsNum = 50;
+int ballsNum = 5;
 
 void generateBalls()
 {
@@ -70,6 +70,24 @@ int main(int argc, char* argv[])
     configureOpenGL(&contextData, &userVSyncData);
     loadFunctionPointers();
 
+    float fibdata[4] = {2, 1, 0, 0};
+
+    fmat2 fib = setFMat2ByElements(fibdata);
+    fmat2 ori = setFMat2ByElements(fibdata);
+
+    printf("%f %f %f %f\n", fib.mem[0], fib.mem[1], fib.mem[2], fib.mem[3]);
+    printf("%f %f %f %f\n", ori.mem[0], ori.mem[1], ori.mem[2], ori.mem[3]);
+    newLine();
+    fib = mulFMat2(fib, fib);
+
+    printf("%f %f %f %f\n", fib.mem[0], fib.mem[1], fib.mem[2], fib.mem[3]);
+    printf("%f %f %f %f\n", ori.mem[0], ori.mem[1], ori.mem[2], ori.mem[3]);
+    newLine();
+    fib = mulFMat2(fib, fib);
+    
+    printf("%f %f %f %f\n", fib.mem[0], fib.mem[1], fib.mem[2], fib.mem[3]);
+    printf("%f %f %f %f\n", ori.mem[0], ori.mem[1], ori.mem[2], ori.mem[3]);
+    newLine();
     
 #if USE_EBO_TO_DRAW_QUAD == 1
     ScreenQuadWithEBO squad;
@@ -86,7 +104,6 @@ int main(int argc, char* argv[])
     setRandomSeedTime();
     generateBalls();
     
-
     float aRatio = contextData.windowWidth / contextData.windowHeight;
 
     int ballsPosLoc = glGetUniformLocation_FA(metaProgram, "ballsPos");
