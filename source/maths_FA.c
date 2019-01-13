@@ -1041,14 +1041,88 @@ FMat3 addFMat3(FMat3 a, FMat3 b)
 {
     FMat3 res = a;
 
+    for (unsigned i = 0; i < 3; ++i)
+    {
+        for (unsigned j = 0; j < 3; ++j)
+        {
+            float* resAcc = accessFMat3(&res, i, j);
+            float* bAcc = accessFMat3(&b, i, j);
+            
+            *resAcc += *bAcc;
+        }
+    }
+
     return res;
 }
 
-FMat4 addFMat4(FMat4 a, FMat4 b);
+FMat4 addFMat4(FMat4 a, FMat4 b)
+{
+    FMat4 res = a;
+    
+    for (unsigned i = 0; i < 4; ++i)
+    {
+        for (unsigned j = 0; j < 4; ++j)
+        {
+            float* resAcc = accessFMat4(&res, i, j);
+            float* bAcc = accessFMat4(&b, i, j);
+            
+            *resAcc += *bAcc;
+        }
+    }
 
-FMat2 scaleFMat2(FMat2 a, float b);
-FMat3 scaleFMat3(FMat3 a, float b);
-FMat4 scaleFMat4(FMat4 a, float b);
+    return res;
+}
+
+FMat2 scaleFMat2(FMat2 a, float b)
+{
+    FMat2 res = a;
+
+    for (unsigned i = 0; i < 2; ++i)
+    {
+        for (unsigned j = 0; j < 2; ++j)
+        {
+            float* resAcc = accessFMat2(&res, i, j);
+
+            *resAcc *= b;
+        }
+    }
+
+    return res;    
+}
+
+FMat3 scaleFMat3(FMat3 a, float b)
+{
+    FMat3 res = a;
+
+    for (unsigned i = 0; i < 3; ++i)
+    {
+        for (unsigned j = 0; j < 3; ++j)
+        {
+            float* resAcc = accessFMat3(&res, i, j);
+
+            *resAcc *= b;
+        }
+    }
+
+    return res;    
+}
+
+FMat4 scaleFMat4(FMat4 a, float b)
+{
+    FMat4 res = a;
+
+    for (unsigned i = 0; i < 4; ++i)
+    {
+        for (unsigned j = 0; j < 4; ++j)
+        {
+            float* resAcc = accessFMat4(&res, i, j);
+
+            *resAcc *= b;
+        }
+    }
+
+    return res;    
+}
 
 float* accessFMat2(FMat2* m, unsigned x, unsigned y)
 {
