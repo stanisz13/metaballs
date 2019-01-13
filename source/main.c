@@ -69,31 +69,6 @@ int main(int argc, char* argv[])
 
     configureOpenGL(&contextData, &userVSyncData);
     loadFunctionPointers();
-
-    FVec2 col1;
-    col1.x = 2.0f;
-    col1.y = 1.0f;
-
-    FVec2 col2;
-    col2.x = 0;
-    col2.y = 0;
-
-    FMat2 fib = setFMat2ByVectors(col1, col2);
-    FMat2 ori = setFMat2ByVectors(col1, col2);
-
-    printf("%f %f %f %f\n", fib.mem[0], fib.mem[1], fib.mem[2], fib.mem[3]);
-    printf("%f %f %f %f\n", ori.mem[0], ori.mem[1], ori.mem[2], ori.mem[3]);
-    newLine();
-    fib = mulFMat2(fib, fib);
-
-    printf("%f %f %f %f\n", fib.mem[0], fib.mem[1], fib.mem[2], fib.mem[3]);
-    printf("%f %f %f %f\n", ori.mem[0], ori.mem[1], ori.mem[2], ori.mem[3]);
-    newLine();
-    fib = mulFMat2(fib, fib);
-    
-    printf("%f %f %f %f\n", fib.mem[0], fib.mem[1], fib.mem[2], fib.mem[3]);
-    printf("%f %f %f %f\n", ori.mem[0], ori.mem[1], ori.mem[2], ori.mem[3]);
-    newLine();
     
 #if USE_EBO_TO_DRAW_QUAD == 1
     ScreenQuadWithEBO squad;

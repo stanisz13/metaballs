@@ -1314,3 +1314,59 @@ FMat4 mulFMat4(FMat4 a, FMat4 b)
     return res;
 }
 
+FVec2 mulFMat2ByFVec2(FMat2 a, FVec2 b)
+{
+    FVec2 res = {};
+
+    for (unsigned i = 0; i < 2; ++i)
+    {
+        float* resAcc = &res.mem[i];
+
+        for (unsigned k = 0; k < 2 ; ++k)
+        {
+            float* matAcc = accessFMat2(&a, k, i);
+            
+            *resAcc += b.mem[k] * *matAcc;
+        }
+    }
+    
+    return res;
+}
+
+FVec3 mulFMat3ByFVec3(FMat3 a, FVec3 b)
+{
+    FVec3 res = {};
+
+    for (unsigned i = 0; i < 3; ++i)
+    {
+        float* resAcc = &res.mem[i];
+
+        for (unsigned k = 0; k < 3 ; ++k)
+        {
+            float* matAcc = accessFMat3(&a, k, i);
+            
+            *resAcc += b.mem[k] * *matAcc;
+        }
+    }
+    
+    return res;    
+}
+
+FVec4 mulFMat4ByFVec4(FMat4 a, FVec4 b)
+{
+    FVec4 res = {};
+
+    for (unsigned i = 0; i < 4; ++i)
+    {
+        float* resAcc = &res.mem[i];
+
+        for (unsigned k = 0; k < 4 ; ++k)
+        {
+            float* matAcc = accessFMat4(&a, k, i);
+            
+            *resAcc += b.mem[k] * *matAcc;
+        }
+    }
+    
+    return res;
+}
