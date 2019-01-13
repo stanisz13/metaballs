@@ -78,8 +78,8 @@ int main(int argc, char* argv[])
     col2.x = 0;
     col2.y = 0;
 
-    fmat2 fib = setFMat2ByVectors(col1, col2);
-    fmat2 ori = setFMat2ByVectors(col1, col2);
+    FMat2 fib = setFMat2ByVectors(col1, col2);
+    FMat2 ori = setFMat2ByVectors(col1, col2);
 
     printf("%f %f %f %f\n", fib.mem[0], fib.mem[1], fib.mem[2], fib.mem[3]);
     printf("%f %f %f %f\n", ori.mem[0], ori.mem[1], ori.mem[2], ori.mem[3]);

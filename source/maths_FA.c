@@ -1019,7 +1019,7 @@ float lengthIVec4(const IVec4 v)
     return res;
 }
 
-float* accessFMat2(fmat2* m, const unsigned x, const unsigned y)
+float* accessFMat2(FMat2* m, const unsigned x, const unsigned y)
 {
     float* res = 0;
 
@@ -1028,7 +1028,7 @@ float* accessFMat2(fmat2* m, const unsigned x, const unsigned y)
     return res;
 }
 
-float* accessFMat3(fmat3* m, const unsigned x, const unsigned y)
+float* accessFMat3(FMat3* m, const unsigned x, const unsigned y)
 {
     float* res = 0;
 
@@ -1037,7 +1037,7 @@ float* accessFMat3(fmat3* m, const unsigned x, const unsigned y)
     return res;
 }
 
-float* accessFMat4(fmat4* m, const unsigned x, const unsigned y)
+float* accessFMat4(FMat4* m, const unsigned x, const unsigned y)
 {
     float* res= 0;
 
@@ -1046,36 +1046,36 @@ float* accessFMat4(fmat4* m, const unsigned x, const unsigned y)
     return res;
 }
 
-fmat2 setFMat2ByElements(const float* data)
+FMat2 setFMat2ByElements(const float* data)
 {
-    fmat2 res;
+    FMat2 res;
 
     memcpy(res.mem, data, sizeof(res.mem));
     
     return res;
 }
 
-fmat3 setFMat3ByElements(const float* data)
+FMat3 setFMat3ByElements(const float* data)
 {
-    fmat3 res;
+    FMat3 res;
 
     memcpy(res.mem, data, sizeof(res.mem));
     
     return res;
 }
 
-fmat4 setFMat4ByElements(const float* data)
+FMat4 setFMat4ByElements(const float* data)
 {
-    fmat4 res;
+    FMat4 res;
 
     memcpy(res.mem, data, sizeof(res.mem));
     
     return res;
 }
 
-fmat2 setFMat2ByVectors(const FVec2 a, const FVec2 b)
+FMat2 setFMat2ByVectors(const FVec2 a, const FVec2 b)
 {
-    fmat2 res;
+    FMat2 res;
 
     res.col1 = a;
     res.col2 = b;
@@ -1083,9 +1083,9 @@ fmat2 setFMat2ByVectors(const FVec2 a, const FVec2 b)
     return res;
 }
 
-fmat3 setFMat3ByVectors(const FVec3 a, const FVec3 b, const FVec3 c)
+FMat3 setFMat3ByVectors(const FVec3 a, const FVec3 b, const FVec3 c)
 {
-    fmat3 res;
+    FMat3 res;
 
     res.col1 = a;
     res.col2 = b;
@@ -1094,9 +1094,9 @@ fmat3 setFMat3ByVectors(const FVec3 a, const FVec3 b, const FVec3 c)
     return res;
 }
 
-fmat4 setFMat4ByVectors(const FVec4 a, const FVec4 b, const FVec4 c, const FVec4 d)
+FMat4 setFMat4ByVectors(const FVec4 a, const FVec4 b, const FVec4 c, const FVec4 d)
 {
-    fmat4 res;
+    FMat4 res;
 
     res.col1 = a;
     res.col2 = b;
@@ -1106,9 +1106,9 @@ fmat4 setFMat4ByVectors(const FVec4 a, const FVec4 b, const FVec4 c, const FVec4
     return res;
 }
 
-fmat2 mulFMat2(fmat2 a, fmat2 b)
+FMat2 mulFMat2(FMat2 a, FMat2 b)
 {
-    fmat2 res = {};
+    FMat2 res = {};
 
     for (unsigned i = 0; i < 2; ++i)
     {
@@ -1126,9 +1126,9 @@ fmat2 mulFMat2(fmat2 a, fmat2 b)
     return res;
 }
 
-fmat3 mulFMat3(fmat3 a, fmat3 b)
+FMat3 mulFMat3(FMat3 a, FMat3 b)
 {
-    fmat3 res = {};
+    FMat3 res = {};
 
     for (unsigned i = 0; i < 3; ++i)
     {
@@ -1148,9 +1148,9 @@ fmat3 mulFMat3(fmat3 a, fmat3 b)
     return res;
 }
 
-fmat4 mulFMat4(fmat4 a, fmat4 b)
+FMat4 mulFMat4(FMat4 a, FMat4 b)
 {
-    fmat4 res = {};
+    FMat4 res = {};
 
     for (unsigned i = 0; i < 4; ++i)
     {

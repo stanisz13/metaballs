@@ -164,7 +164,7 @@ typedef struct
         };
         float mem[4];
     };
-} fmat2;
+} FMat2;
 
 typedef struct
 {
@@ -176,7 +176,7 @@ typedef struct
         };
         float mem[9];
     };
-} fmat3;
+} FMat3;
 
 typedef struct
 {
@@ -188,7 +188,7 @@ typedef struct
         };
         float mem[16];
     };
-} fmat4;
+} FMat4;
 
 //NOTE(Stanisz13): RANDOM
 typedef struct
@@ -319,20 +319,22 @@ float lengthIVec4(const IVec4 v);
 
 //NOTE(Stanisz13): MATRICES
 
-float* accessFMat2(fmat2* m, const unsigned x, const unsigned y);
-float* accessFMat3(fmat3* m, const unsigned x, const unsigned y);
-float* accessFMat4(fmat4* m, const unsigned x, const unsigned y);
+float* accessFMat2(FMat2* m, const unsigned x, const unsigned y);
+float* accessFMat3(FMat3* m, const unsigned x, const unsigned y);
+float* accessFMat4(FMat4* m, const unsigned x, const unsigned y);
 
-fmat2 setFMat2ByElements(const float* data);
-fmat3 setFMat3ByElements(const float* data);
-fmat4 setFMat4ByElements(const float* data);
+FMat2 setFMat2ByElements(const float* data);
+FMat3 setFMat3ByElements(const float* data);
+FMat4 setFMat4ByElements(const float* data);
 
-fmat2 setFMat2ByVectors(const FVec2 a, const FVec2 b);
-fmat3 setFMat3ByVectors(const FVec3 a, const FVec3 b, const FVec3 c);
-fmat4 setFMat4ByVectors(const FVec4 a, const FVec4 b, const FVec4 c, const FVec4 d);
+FMat2 setFMat2ByVectors(const FVec2 a, const FVec2 b);
+FMat3 setFMat3ByVectors(const FVec3 a, const FVec3 b, const FVec3 c);
+FMat4 setFMat4ByVectors(const FVec4 a, const FVec4 b, const FVec4 c, const FVec4 d);
 
-fmat2 mulFMat2(const fmat2 a, const fmat2 b);
-fmat3 mulFMat3(const fmat3 a, const fmat3 b);
-fmat4 mulFMat4(const fmat4 a, const fmat4 b);
+FMat2 addFMat2();
+
+FMat2 mulFMat2(const FMat2 a, const FMat2 b);
+FMat3 mulFMat3(const FMat3 a, const FMat3 b);
+FMat4 mulFMat4(const FMat4 a, const FMat4 b);
 
 #endif
