@@ -292,7 +292,7 @@ unsigned dotProductUVec4(const UVec4 v, const UVec4 w);
 int dotProductIVec4(const IVec4 v, const IVec4 w);
 
 float lengthSquaredFVec2(const FVec2 v);
-double lengtSquaredhDVec2(const DVec2 v);
+double lengthSquaredDVec2(const DVec2 v);
 unsigned lengthSquaredUVec2(const UVec2 v);
 unsigned lengthSquaredIVec2(const IVec2 v);
 float lengthSquaredFVec3(const FVec3 v);

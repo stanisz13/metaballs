@@ -3,6 +3,7 @@
 #include <float.h>
 #include <time.h>
 #include <string.h>
+#include <math.h>
 
 float absFloat(const float v)
 {
@@ -835,7 +836,7 @@ float lengthSquaredFVec2(const FVec2 v)
     return res;
 }
 
-double lengtSquaredhDVec2(const DVec2 v)
+double lengthSquaredDVec2(const DVec2 v)
 {
     double res = v.x * v.x
         + v.y * v.y; 
@@ -934,18 +935,89 @@ unsigned lengthSquaredIVec4(const IVec4 v)
     return res;
 }        
 
-float lengthFVec2(const FVec2 v);
-double lengthDVec2(const DVec2 v);
-float lengthUVec2(const UVec2 v);
-float lengthIVec2(const IVec2 v);
-float lengthFVec3(const FVec3 v);
-double lengthDVec3(const DVec3 v);
-float lengthUVec3(const UVec3 v);
-float lengthIVec3(const IVec3 v);
-float lengthFVec4(const FVec4 v);
-double lengthDVec4(const DVec4 v);
-float lengthUVec4(const UVec4 v);
-float lengthIVec4(const IVec4 v);
+float lengthFVec2(const FVec2 v)
+{
+    float res = sqrt((float)lengthSquaredFVec2(v));
+
+    return res;
+}
+
+double lengthDVec2(const DVec2 v)
+{
+    double res = sqrt((double)lengthSquaredDVec2(v));
+
+    return res;
+}
+
+float lengthUVec2(const UVec2 v)
+{
+    float res = sqrt((float)lengthSquaredUVec2(v));
+
+    return res;
+}
+
+float lengthIVec2(const IVec2 v)
+{
+    float res = sqrt((float)lengthSquaredIVec2(v));
+
+    return res;
+}
+
+float lengthFVec3(const FVec3 v)
+{
+    float res = sqrt((float)lengthSquaredFVec3(v));
+
+    return res;
+}    
+
+double lengthDVec3(const DVec3 v)
+{
+    double res = sqrt((double)lengthSquaredDVec3(v));
+
+    return res;
+}
+
+float lengthUVec3(const UVec3 v)
+{
+    float res = sqrt((float)lengthSquaredUVec3(v));
+
+    return res;
+}
+
+float lengthIVec3(const IVec3 v)
+{
+    float res = sqrt((float)lengthSquaredIVec3(v));
+
+    return res;
+}
+
+float lengthFVec4(const FVec4 v)
+{
+    float res = sqrt((float)lengthSquaredFVec4(v));
+
+    return res;
+}
+
+double lengthDVec4(const DVec4 v)
+{
+    double res = sqrt((double)lengthSquaredDVec4(v));
+
+    return res;
+}
+
+float lengthUVec4(const UVec4 v)
+{
+    float res = sqrt((float)lengthSquaredUVec4(v));
+
+    return res;
+}
+
+float lengthIVec4(const IVec4 v)
+{
+    float res = sqrt((float)lengthSquaredIVec4(v));
+
+    return res;
+}
 
 float* accessFMat2(fmat2* m, const unsigned x, const unsigned y)
 {
