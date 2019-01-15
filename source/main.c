@@ -87,17 +87,23 @@ int main(int argc, char* argv[])
     
     float aRatio = contextData.windowWidth / contextData.windowHeight;
 
+    FMat2 mat = identityFMat2();
+    mat = scaleFMat2(mat, 2);
+
+    
     int ballsPosLoc = glGetUniformLocation_FA(metaProgram, "ballsPos");
     int aRatioLoc = glGetUniformLocation_FA(metaProgram, "aRatio");
     int radiiLoc = glGetUniformLocation_FA(metaProgram, "radii");
     int ballsNumLoc = glGetUniformLocation_FA(metaProgram, "ballsNum");
     int colorsLoc = glGetUniformLocation_FA(metaProgram, "colors");
+    int matLoc = glGetUniformLocation_FA(metaProgram, "mat");
     
     glUniform1fv_FA(radiiLoc, MAX_BALLS_NUM, radii);
     glUniform3fv_FA(colorsLoc, MAX_BALLS_NUM, (const float *)colors);
     glUniform1f_FA(aRatioLoc, aRatio);
     glUniform1i_FA(ballsNumLoc, ballsNum);
-    
+    glUniformMatrix2fv_FA(matLoc, 1, 0, mat.mem);
+        
     glDisable(GL_DEPTH_TEST);
 
 #if 0
