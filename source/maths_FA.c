@@ -1,9 +1,4 @@
 #include "maths_FA.h"
-#include <limits.h>
-#include <float.h>
-#include <time.h>
-#include <string.h>
-#include <math.h>
 
 float absFloat(float v)
 {

@@ -1,7 +1,11 @@
 #ifndef MATHS_FA__H
 #define MATHS_FA__H
 
-#include "log_FA.h"
+#include <limits.h>
+#include <float.h>
+#include <time.h>
+#include <string.h>
+#include <math.h>
 
 #define EPSILON 0.0000001f
 #define EPSILON_DOUBLE 0.0000000000001f
