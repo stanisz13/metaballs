@@ -9,7 +9,7 @@
 
 #define EPSILON 0.0000001f
 #define EPSILON_DOUBLE 0.0000000000001f
-
+#define PI 3.1415926535f
 
 //NOTE(Stanisz13): VECTORS
 typedef struct
@@ -220,6 +220,9 @@ int minInt(int v, int w);
 unsigned minUnsigned(unsigned v, unsigned w);
 unsigned maxUnsigned(unsigned v, unsigned w);
 
+float degreesToRadians(float deg);
+float radiansToDegrees(float rad);
+
 //NOTE(Stanisz13): RANDOM
 void setRandomSeed(unsigned s);
 void setRandomSeedTime();
@@ -354,5 +357,8 @@ FMat4 mulFMat4(FMat4 a, FMat4 b);
 FVec2 mulFMat2ByFVec2(FMat2 a, FVec2 b);
 FVec3 mulFMat3ByFVec3(FMat3 a, FVec3 b);
 FVec4 mulFMat4ByFVec4(FMat4 a, FVec4 b);
+
+FMat4 projectionFMat4(float near, float far,
+                      float aRatio, float FOVradians);
 
 #endif

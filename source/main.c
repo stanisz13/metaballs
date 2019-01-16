@@ -88,8 +88,7 @@ int main(int argc, char* argv[])
     float aRatio = contextData.windowWidth / contextData.windowHeight;
 
     FMat2 mat = identityFMat2();
-    mat = scaleFMat2(mat, 2);
-
+    mat = scaleFMat2(mat, 1);
     
     int ballsPosLoc = glGetUniformLocation_FA(metaProgram, "ballsPos");
     int aRatioLoc = glGetUniformLocation_FA(metaProgram, "aRatio");

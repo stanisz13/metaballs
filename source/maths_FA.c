@@ -112,6 +112,16 @@ unsigned maxUnsigned(unsigned v, unsigned w)
     return w;
 }
 
+float degreesToRadians(float deg)
+{
+    return ((deg * PI) / 180.0f);
+}
+
+float radiansToDegrees(float rad)
+{
+    return((rad * 180.0f) / PI);
+}
+
 unsigned xorshift()
 {
     unsigned x = randomSeries_FA.seed;
@@ -1362,6 +1372,27 @@ FVec4 mulFMat4ByFVec4(FMat4 a, FVec4 b)
             *resAcc += b.mem[k] * *matAcc;
         }
     }
+    
+    return res;
+}
+
+FMat4 projectionFMat4(float near, float far,
+                      float aRatio, float FOVradians)
+{
+    FMat4 res = {};
+
+    float top = tan(FOVradians / 2.0f) * near;
+    float bottom = -1.0f * top;
+    float right = top * aRatio;
+    float left = - right;
+    
+    res.col1.x = (2.0f * near) / (right - left);
+    res.col2.y = (2.0f * near) / (top - bottom);
+    res.col3.x = (right + left) / (right - left);
+    res.col3.y = (top + bottom) / (top - bottom);
+    res.col3.z = (-far - near) / (far - near);
+    res.col3.w = -1.0f;
+    res.col4.z = (-2.0f * far * near) / (far - near);
     
     return res;
 }
